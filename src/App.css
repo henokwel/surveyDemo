@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:ital,wght@0,100..900;1,100..900&family=Miranda+Sans:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+.app {
+  height: 100%;
+  /* background: rgb(255, 0, 0); */
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Nunito", sans-serif; */
+  /* font-family: "Miranda Sans", sans-serif; */
+  /* font-family: "DM Sans", sans-serif; */
+  /* font-family: "Geist", sans-serif; */
+  /* font-family: "Arimo", sans-serif; */
+  /* font-weight: 400; */
+  background: white;
+  font-size: 16px;
+  /* font-optical-sizing: auto; */
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.container {
+  /* height: fit-content; */
+  min-height: 300px;
+  /* background: rgba(172, 255, 47, 0.443); */
+  padding: 15px;
+}
+
+.question_card {
+  border-bottom: 5px solid #e4e4e4;
+}
+
+.option_container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.option_container div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+input[type="radio"] {
+  height: 30px;
+  width: 30px;
+  vertical-align: middle;
+  /* color: green; */
+}
+
+.inputDiv label {
+  max-width: 280px;
+  margin-left: 15px;
+}
+
+.pagination_container {
+  display: flex;
+  justify-content: center;
+  /* background: grey; */
+  margin: 15px 0 15px 0;
+}
+
+.pagination_container button {
+  font-size: 20px;
+  width: 150px;
+  height: 45px;
+  background: green;
+  color: white;
+  border: none;
+  margin: 10px;
+}
+
+/* Hide multiview */
+.multi_option {
+  display: none;
+}
+.choice_input {
+  font-weight: 400;
+}
+.choices_container {
+  /* background-color:grey; */
+  margin-top: 15px;
+  font-weight: 600;
+  border-bottom: 3px solid #e4e4e4;
+}
+
+/* Add bottom line for multi on mobile view and add even background grey */
+
+.choice_item {
+  border-bottom: 2px solid #e4e4e4;
+}
+
+.choice_item:nth-last-child(-n + 1) {
+  border-bottom: none;
+}
+.choice_item:nth-child(even) {
+  background: #f3f3f3;
+}
+
+.choices_container:nth-last-child(-n + 1) {
+  border-bottom: none;
+}
+
+.choice_label {
+  /* background: red; */
+  margin: 16px 0 16px 0;
+  padding-left: 5px;
+}
+.choices_container:nth-child(even) {
+  background: #f3f3f3;
+}
+
+.choice_input div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) {
+  .app {
+    /* background: rgb(203, 161, 22); */
+    align-items: center;
+    font-size: 18px;
+    padding-right: 40px;
+  }
+
+  .multi_option {
+    display: none;
+  }
+  .container {
+    /* margin: 10% 10% 0 10%; */
+    min-width: 650px;
+    /* max-width: 635px; */
+  }
+  /* .choice_label {
+    width: 70ch;
+    color: red;
+  } */
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .app {
+    /* height: 100vh; */
+    /* background: rgb(111, 212, 95); */
+    background: #e4e4e4;
+    padding-right: 0;
+  }
+
+  /* .choice_label label {
+    max-width: 300px;
+    color: green;
+  } */
+  .container {
+    width: 1000px;
+    min-height: fit-content;
+    margin-top: 100px;
+    padding: 20px 60px 20px 60px;
+    background: white;
+    border-radius: 5px 5px 0 0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .option_container {
+    padding-left: 0px;
+  }
+  .question_card {
+    display: flex;
+    flex-direction: column;
+    border-bottom: none;
+  }
+
+  .multi_option {
+    display: flex;
+    flex-direction: row;
+    /* background: red; */
+    /* width: 50%; */
+    align-self: flex-end;
+    /* justify-content: flex-end; */
+    width: 500px;
+    /* padding-left: 5px; */
+  }
+  .multi_label {
+    display: none;
+  }
+
+  /* .choices_container div {
+    background-color: grey;
+    border-bottom: 2px black solid;
+  } */
+
+  .choice_item {
+    display: flex;
+    justify-content: space-between;
+    min-height: 60px;
+    margin-top: 15px;
+    font-weight: 600;
+    border-bottom: 2px  solid #bebebe;
+  }
+
+  .choice_item:nth-last-child(-n + 1) {
+    border-bottom: none;
+  }
+  .choice_input {
+    display: flex;
+    justify-content: space-between;
+    min-width: 500px;
+  }
+
+  .choice_input div {
+    min-width: 75px;
+    display: flex;
+    justify-content: center;
+  }
+  .multi_option input[type="radio"] {
+    display: none;
+    text-align: center;
+  }
+
+  .choice_input input[type="radio"] {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    /* color: green; */
+  }
+
+  .option_label {
+    text-align: center;
+    padding-left: 5px;
+
+    /* padding: 5px; */
+  }
+
+  .pagination_container {
+    align-items: end;
+    min-height: 150px;
+    min-width: 1000px;
+    background: white;
+    padding: 0px 60px 30px;
+    border-radius: 0 0 5px 5px;
+    border-top: 5px solid #e4e4e4;
+    margin: 0;
+  }
+}

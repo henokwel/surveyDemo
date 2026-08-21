@@ -1,0 +1,29 @@
+.custom-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border: 7px solid #dedede;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.custom-radio:checked {
+  border-color: #00965e;
+}
+
+.custom-radio:not(:checked):hover {
+  border-color: #919191;
+}
+
+.custom-radio:focus-visible {
+  outline: 3px solid #1a73e8;
+  outline-offset: 3px;
+}
+
+.custom-radio:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
