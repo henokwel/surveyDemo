@@ -1,7 +1,4 @@
-
 import '../src/App.css'
-// import { SingleQ_Card } from './components/singleQ_Card'
-
 export const About = () => {
 
     return (
