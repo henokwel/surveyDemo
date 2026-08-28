@@ -1,6 +1,6 @@
 
 import '../src/App.css'
-import { SingleQ_Card } from './components/singleQ_Card'
+// import { SingleQ_Card } from './components/singleQ_Card'
 
 export const About = () => {
 
@@ -8,7 +8,7 @@ export const About = () => {
          <div className='app'>
               <div className="container">
                 {/* <MultipleQ_Card /> */}
-                <SingleQ_Card />
+                {/* <SingleQ_Card /> */}
                
         
               </div>

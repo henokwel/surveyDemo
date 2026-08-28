@@ -5,7 +5,7 @@ export type SurveyOption = {
 
 export type SurveyQuestion = {
   id: string;
-  section: string;
+  section?: string;
   section_subTitle?: string;
   question: string;
   helpText?: string;
@@ -46,7 +46,7 @@ export const safetyOptions_EN: SurveyOption[] = [
 
 export const safetyOptions_EN_old: SurveyOption[] = [
   { value: "very_unsafe", label: "Yes, very often" },
-  { value: "fairly_unsafe", label: "Yes, quite often" },
+  { value: "fairly_unsafe", label: "Yes, very often" },
   { value: "fairly_safe", label: "Yes, but only rarely" },
   { value: "very_safe", label: "No, has not happend" },
   { value: "not_applicable", label: "Don't know" }
@@ -129,6 +129,15 @@ export const surveyQuestions_0: SurveyQuestion[] = [
     question: "that you have worried about being assaulted or physically abused in the area where you live?",
     required: true,
     options: safetyOptions_EN,
+  },
+
+  {
+    id: "safety-Car",
+    // section: "Trygghet i området",
+    section_subTitle: "Har det under senaste 12 månaderna hänt ...",
+    question: "att du oroat dig för att bli överfallen eller misshandlad i omradet dar du bor",
+    required: true,
+    options: safetyOptions,
   },
 ]
 

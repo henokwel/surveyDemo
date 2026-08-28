@@ -1,0 +1,446 @@
+.previewCard {
+  width: min(720px, 100%);
+
+  margin: 0 auto;
+
+  background: #ffffff;
+  color: #202421;
+
+  border: 1px solid #e2e5e2;
+  border-radius: 10px;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow: visible;
+}
+
+
+/* -------------------------
+   Language
+------------------------- */
+
+.previewCard_languageBar {
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 12px 18px 0;
+}
+
+.previewCard_languages {
+  display: flex;
+
+  background: #f4f5f4;
+
+  border: 1px solid #e0e3e0;
+  border-radius: 6px;
+}
+
+.previewCard_languageGroup {
+  position: relative;
+}
+
+.previewCard_flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 40px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  font-size: 21px;
+
+  cursor: pointer;
+}
+
+.previewCard_flag:hover {
+  background: #eef1ee;
+}
+
+.previewCard_flag.active {
+  background: #e4f1e7;
+}
+
+.previewCard_languageMenu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+
+  z-index: 10;
+
+  width: 150px;
+
+  padding: 5px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe3df;
+  border-radius: 7px;
+
+  box-shadow:
+    0 8px 22px rgba(20, 30, 24, 0.1);
+}
+
+.previewCard_languageMenu button {
+  width: 100%;
+
+  padding: 9px 10px;
+
+  border: 0;
+  border-radius: 5px;
+
+  background: transparent;
+
+  color: #292d2a;
+
+  font: inherit;
+  font-size: 14px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.previewCard_languageMenu button:hover {
+  background: #f3f6f3;
+}
+
+
+/* -------------------------
+   Main content
+------------------------- */
+
+.previewCard_content {
+  padding: 28px 34px 10px;
+}
+
+.previewCard_header h2 {
+  margin: 0;
+
+  color: #202421;
+
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.3;
+
+  letter-spacing: -0.015em;
+}
+
+.previewCard_header p {
+  margin: 7px 0 24px;
+
+  color: #656b67;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* -------------------------
+   Desktop table header
+------------------------- */
+
+.previewCard_optionHeader {
+  display: grid;
+
+  grid-template-columns:
+    minmax(210px, 1.8fr)
+    repeat(4, minmax(72px, 0.65fr));
+
+  align-items: end;
+
+  min-height: 72px;
+
+  padding: 0 8px 12px;
+}
+
+.previewCard_optionHeader span {
+  padding: 0 5px;
+
+  color: #3e443f;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+
+  text-align: center;
+}
+
+
+/* -------------------------
+   Questions
+------------------------- */
+
+.previewCard_questionRow {
+  display: grid;
+
+  grid-template-columns:
+    minmax(210px, 1.8fr)
+    repeat(4, minmax(72px, 0.65fr));
+
+  align-items: center;
+
+  min-height: 66px;
+
+  padding: 0 8px;
+
+  border-top: 1px solid #e3e6e3;
+}
+
+.previewCard_questionRow:nth-child(even) {
+  background: #f8f9f8;
+}
+
+.previewCard_question {
+  padding: 14px 12px 14px 0;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.previewCard_options {
+  display: contents;
+}
+
+
+/* -------------------------
+   Options / radio
+------------------------- */
+
+.previewCard_option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.previewCard_option input {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 22px;
+  height: 22px;
+
+  margin: 0;
+
+  background: #ffffff;
+
+  border: 2px solid #cbd0cc;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.previewCard_option:hover input {
+  border-color: #168342;
+}
+
+.previewCard_option input:checked {
+  border: 6px solid #168342;
+}
+
+.previewCard_option input:focus-visible {
+  outline: 3px solid rgba(22, 131, 66, 0.2);
+  outline-offset: 3px;
+}
+
+.previewCard_mobileLabel {
+  display: none;
+}
+
+
+/* -------------------------
+   Footer
+------------------------- */
+
+.previewCard_footer {
+  display: flex;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 8px;
+
+  padding: 22px 24px 26px;
+
+  border-top: 1px solid #e6e8e6;
+}
+
+.previewCard_footer button {
+  min-width: 118px;
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  border-radius: 6px;
+
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 120ms ease,
+    transform 80ms ease;
+}
+
+.previewCard_backButton {
+  background: #f1f3f1;
+  color: #343934;
+
+  border: 1px solid #dcdedc;
+}
+
+.previewCard_backButton:hover {
+  background: #e8ebe8;
+}
+
+.previewCard_nextButton {
+  background: #087f3e;
+  color: #ffffff;
+
+  border: 1px solid #087f3e;
+}
+
+.previewCard_nextButton:hover {
+  background: #066f36;
+}
+
+.previewCard_footer button:active {
+  transform: translateY(1px);
+}
+
+.previewCard_footer button:focus-visible,
+.previewCard_flag:focus-visible,
+.previewCard_languageMenu button:focus-visible {
+  outline: 3px solid rgba(8, 127, 62, 0.2);
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 620px) {
+
+  .previewCard {
+    border-radius: 7px;
+  }
+
+  .previewCard_languageBar {
+    justify-content: flex-start;
+
+    padding: 8px 10px 0;
+  }
+
+  .previewCard_content {
+    padding: 20px 10px 8px;
+  }
+
+  .previewCard_header h2 {
+    font-size: 17px;
+  }
+
+  .previewCard_header p {
+    margin-bottom: 18px;
+
+    font-size: 13px;
+  }
+
+
+  /* Hide desktop column labels */
+  .previewCard_optionHeader {
+    display: none;
+  }
+
+
+  /* Stack each question */
+  .previewCard_questionRow {
+    display: block;
+
+    min-height: 0;
+
+    padding: 14px 4px 15px;
+  }
+
+  .previewCard_question {
+    padding: 0 4px 10px;
+
+    font-size: 14px;
+  }
+
+  .previewCard_options {
+    display: grid;
+
+    gap: 3px;
+  }
+
+  .previewCard_option {
+    justify-content: flex-start;
+
+    gap: 11px;
+
+    min-height: 42px;
+
+    padding: 4px;
+  }
+
+  .previewCard_mobileLabel {
+    display: inline;
+
+    color: #303531;
+
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+
+  /* Buttons */
+  .previewCard_footer {
+    gap: 10px;
+
+    padding: 18px 12px 20px;
+  }
+
+  .previewCard_footer button {
+    flex: 1;
+
+    min-width: 0;
+  }
+}
+
+
+/* Very small phones */
+
+@media (max-width: 360px) {
+
+  .previewCard_content {
+    padding-inline: 8px;
+  }
+
+  .previewCard_footer {
+    padding-inline: 10px;
+  }
+}

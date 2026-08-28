@@ -1,11 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:ital,wght@0,100..900;1,100..900&family=Miranda+Sans:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:ital,wght@0,100..900;1,100..900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Libertinus+Serif+Display&family=Miranda+Sans:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Telex&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 .app {
   height: 100%;
+  min-height: 100vh;
   /* background: rgb(255, 0, 0); */
   display: flex;
   flex-direction: column;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Inter", sans-serif;
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  /* font-family: "Telex", sans-serif; */
+  /* font-family: "Libertinus Sans", sans-serif; */
+  /* font-family: "Roboto", sans-serif; */
   /* font-family: "Nunito", sans-serif; */
   /* font-family: "Miranda Sans", sans-serif; */
   /* font-family: "DM Sans", sans-serif; */
@@ -40,7 +46,7 @@
 .option_container div {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 input[type="radio"] {
@@ -53,6 +59,7 @@ input[type="radio"] {
 .inputDiv label {
   max-width: 280px;
   margin-left: 15px;
+  cursor: pointer;
 }
 
 .pagination_container {
@@ -70,6 +77,7 @@ input[type="radio"] {
   color: white;
   border: none;
   margin: 10px;
+  cursor: pointer;
 }
 
 /* Hide multiview */
@@ -105,8 +113,9 @@ input[type="radio"] {
 
 .choice_label {
   /* background: red; */
-  margin: 16px 0 16px 0;
+  /* margin: 16px 0 16px 0; */
   padding-left: 5px;
+  padding-top: 1px;
 }
 .choices_container:nth-child(even) {
   background: #f3f3f3;
@@ -121,7 +130,6 @@ input[type="radio"] {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 768px) {
   .app {
-    /* background: rgb(203, 161, 22); */
     align-items: center;
     font-size: 18px;
     padding-right: 40px;
@@ -131,29 +139,17 @@ input[type="radio"] {
     display: none;
   }
   .container {
-    /* margin: 10% 10% 0 10%; */
     min-width: 650px;
-    /* max-width: 635px; */
   }
-  /* .choice_label {
-    width: 70ch;
-    color: red;
-  } */
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .app {
-    /* height: 100vh; */
-    /* background: rgb(111, 212, 95); */
     background: #e4e4e4;
     padding-right: 0;
   }
 
-  /* .choice_label label {
-    max-width: 300px;
-    color: green;
-  } */
   .container {
     width: 1000px;
     min-height: fit-content;
@@ -164,9 +160,35 @@ input[type="radio"] {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
 
-  .option_container {
-    padding-left: 0px;
+  .option_container div {
+    align-items: end;
   }
+  .question_container {
+    margin-bottom: 10px;
+  }
+
+  .option_container {
+    padding-left: 15px;
+  }
+  .option_container div {
+    margin-bottom: 0;
+  }
+
+  /* Only for single Q card in Desktop view */
+  .singleQView {
+    margin-bottom: 20px;
+  }
+  .multi_option_lables {
+    width: 100%;
+  }
+  .optionLabel {
+    /* background-color: red; */
+    /* display: flex; */
+    width: 100%;
+    justify-content: space-between;
+    /* text-align: center; */
+  }
+
   .question_card {
     display: flex;
     flex-direction: column;
@@ -176,31 +198,25 @@ input[type="radio"] {
   .multi_option {
     display: flex;
     flex-direction: row;
-    /* background: red; */
-    /* width: 50%; */
     align-self: flex-end;
-    /* justify-content: flex-end; */
     width: 500px;
-    /* padding-left: 5px; */
   }
   .multi_label {
     display: none;
   }
 
-  /* .choices_container div {
-    background-color: grey;
-    border-bottom: 2px black solid;
-  } */
-
   .choice_item {
     display: flex;
     justify-content: space-between;
     min-height: 60px;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     font-weight: 600;
-    border-bottom: 2px  solid #bebebe;
+    border-bottom: 2px solid #bebebe;
   }
 
+  .choice_input div {
+    margin-bottom: 0;
+  }
   .choice_item:nth-last-child(-n + 1) {
     border-bottom: none;
   }
@@ -224,14 +240,17 @@ input[type="radio"] {
     height: 30px;
     width: 30px;
     vertical-align: middle;
-    /* color: green; */
   }
 
   .option_label {
     text-align: center;
     padding-left: 5px;
-
-    /* padding: 5px; */
+  }
+  .optionLabel p {
+    text-align: center;
+    margin-right: 5px;
+    width: 95px;
+    text-wrap: wrap;
   }
 
   .pagination_container {
