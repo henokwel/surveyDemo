@@ -112,10 +112,7 @@ function App() {
 
   return (
     <div className='app'>
-      <DemoToggle
-        enabled={improvedUI}
-        onChange={setImprovedUI}
-      />
+
       {!isSurveyComplete ?
         <>
           <div className="container">
@@ -165,7 +162,10 @@ function App() {
               onClick={() => handleSectionNavigation("Next")}>Next</button>
           </div>
 
-
+          <DemoToggle
+            enabled={improvedUI}
+            onChange={setImprovedUI}
+          />
         </>
         :
         <div>

@@ -6,7 +6,7 @@
 .demoToggle {
   width: 150px;
   height: 44px;
-  align-self: flex-end;
+  align-self: center;
   display: flex;
   align-items: center;
   justify-content: flex-end;
