@@ -2,7 +2,7 @@ import Radio from "./Checkbox"
 import QuestionHelp from "./QuestionHelp";
 
 
-export const MultipleQ_Card = ({ questionsBySection, currentSectionIndex, language, handleAnswers, answers }) => {
+export const MultipleQ_Card = ({ questionsBySection, currentSectionIndex, language, handleAnswers, answers, improvedUI }) => {
     const sectionTitles = Object.keys(questionsBySection)
     const paginationArr_ = Object.values(questionsBySection)
     console.log(sectionTitles);
@@ -25,7 +25,7 @@ export const MultipleQ_Card = ({ questionsBySection, currentSectionIndex, langua
                     <div className='optionLabel'>
                         {paginationArr_[currentSectionIndex][0].options.map(item => {
                             // Enable in case option text gets too long. 
-                            const labelLengthCheck = item.label[language].length > 23 ? item.short_label[language] : item.label[language]
+                            // const labelLengthCheck = item.label[language].length > 23 ? item.short_label[language] : item.label[language]
                             return (<p key={item.id}>{item.label[language]}</p>)
                             // return (<p key={item.id}>{labelLengthCheck}</p>)
                         })}
@@ -47,10 +47,15 @@ export const MultipleQ_Card = ({ questionsBySection, currentSectionIndex, langua
                                     <div className="choice_label">
                                         <p>{item.question[language]}</p>
 
-                                        <QuestionHelp
-                                            language={language}
-                                            helpText={item.helpText[language]}
-                                        />
+
+                                        {
+                                            improvedUI ?
+                                                <QuestionHelp
+                                                    language={language}
+                                                    helpText={item.helpText[language]}
+                                                />
+                                                : <></>
+                                        }
 
                                     </div>
                                     <div className="choice_input">

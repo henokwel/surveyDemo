@@ -5,6 +5,7 @@ import { MultipleQ_Card } from './components/MultipleQ_Card'
 import { surveyQuestions_0, type LanguageType, paginationHint, type SurveyQuestion } from './Q3'
 import SingleQ_Card from './components/SingleQ_Card'
 import LanguageDropdown from './components/LangDropDown'
+import DemoToggle from './components/DemoToggle'
 
 function App() {
   const [currentSectionIndex, setcurrentSectionIndex] = useState(0)
@@ -13,6 +14,7 @@ function App() {
   const [answerCheck, setAnswerCheck] = useState([])
   const [isSurveyComplete, setEndOfSurvey] = useState(false)
   const [language, setLanguage] = useState<LanguageType>("sv")
+  const [improvedUI, setImprovedUI] = useState(false)
 
   const handleLangChange = (newLang: LanguageType) => {
     setLanguage(newLang)
@@ -41,6 +43,7 @@ function App() {
       })
     })
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAnswerCheck(sectionArr)
 
   }, [])
@@ -109,13 +112,21 @@ function App() {
 
   return (
     <div className='app'>
-
+      <DemoToggle
+        enabled={improvedUI}
+        onChange={setImprovedUI}
+      />
       {!isSurveyComplete ?
         <>
           <div className="container">
-            <nav>
-              <LanguageDropdown language={language} onChange={handleLangChange} />
-            </nav>
+
+            {
+              improvedUI ?
+                <nav>
+                  <LanguageDropdown language={language} onChange={handleLangChange} />
+                </nav>
+                : <></>
+            }
             {
               !currentQuestionType ?
                 <SingleQ_Card
@@ -124,6 +135,7 @@ function App() {
                   language={language}
                   handleAnswers={handleAnswers}
                   answers={answers}
+                  improvedUI={improvedUI}
 
                 /> :
                 <MultipleQ_Card
@@ -132,9 +144,9 @@ function App() {
                   language={language}
                   handleAnswers={handleAnswers}
                   answers={answers}
+                  improvedUI={improvedUI}
 
                 />
-
             }
 
             <div className='navigation-hint'>

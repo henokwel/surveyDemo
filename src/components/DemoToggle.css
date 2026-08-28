@@ -1,0 +1,117 @@
+/*
+  The outer container is ALWAYS present.
+  This gives you an invisible area to hover over.
+*/
+
+.demoToggle {
+  width: 150px;
+  height: 44px;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  /* Keep this invisible hover area */
+  cursor: default;
+}
+
+/*
+  Actual visible control
+*/
+
+.demoToggle_content {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 6px 8px;
+
+  opacity: 0;
+
+  transition: opacity 150ms ease;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/*
+  Only show when hovering the invisible area
+*/
+
+.demoToggle:hover .demoToggle_content {
+  opacity: 1;
+}
+
+/* Label */
+
+.demoToggle_label {
+  color: #626963;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* Switch */
+
+.demoToggle_switch {
+  position: relative;
+
+  width: 42px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 20px;
+
+  background: #d5d9d6;
+
+  cursor: pointer;
+
+  transition: background 160ms ease;
+}
+
+/* Circle */
+
+.demoToggle_thumb {
+  position: absolute;
+
+  top: 3px;
+  left: 3px;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+
+  transition: transform 160ms ease;
+}
+
+/* Active */
+
+.demoToggle_switch.active {
+  background: #168342;
+}
+
+.demoToggle_switch.active .demoToggle_thumb {
+  transform: translateX(18px);
+}
+
+/* Focus */
+
+.demoToggle_switch:focus-visible {
+  outline: 3px solid rgba(8, 127, 62, 0.18);
+  outline-offset: 3px;
+}

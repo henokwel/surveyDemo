@@ -1,9 +1,9 @@
 import Radio from "./Checkbox"
 import QuestionHelp from "./QuestionHelp"
 
-function SingleQ_Card({ questionsBySection, currentSectionIndex, language, handleAnswers, answers }) {
+function SingleQ_Card({ questionsBySection, currentSectionIndex, language, handleAnswers, answers, improvedUI }) {
 
-    const sectionTitles = Object.keys(questionsBySection)
+    // const sectionTitles = Object.keys(questionsBySection)
     const paginationArr_ = Object.values(questionsBySection)
 
     const itemID = paginationArr_[currentSectionIndex][0].id
@@ -17,10 +17,14 @@ function SingleQ_Card({ questionsBySection, currentSectionIndex, language, handl
             <div className='question_container'>
                 <p>{question[language]}</p>
 
-                <QuestionHelp
-                    language={language}
-                    helpText={helperText[language]}
-                />
+                {
+                    improvedUI ?
+                        <QuestionHelp
+                            language={language}
+                            helpText={helperText[language]}
+                        />
+                        : <></>
+                }
             </div>
 
             {
