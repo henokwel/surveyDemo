@@ -10,6 +10,7 @@ function SingleQ_Card({ questionsBySection, currentSectionIndex, language, handl
     const question = paginationArr_[currentSectionIndex][0].question
     const helperText = paginationArr_[currentSectionIndex][0]?.helpText
     console.log(question);
+// Demo
 
     return (
         <div className='question_card'>
