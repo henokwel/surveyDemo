@@ -1,0 +1,95 @@
+.questionHelp {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+/* "i  Vad menas?" */
+
+.questionHelp_button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+
+  border: 0;
+  background: transparent;
+
+  color: #054120;
+
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.questionHelp_button:hover {
+  color: #087f3e;
+}
+
+/* Small info circle */
+
+.questionHelp_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  border: 1px solid #054120;
+  border-radius: 50%;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Expanded explanation */
+
+.questionHelp_text {
+  max-width: 650px;
+  margin: 7px 0 4px;
+  padding: 9px 11px;
+
+  border-left: 3px solid #a9cdb4;
+  border-radius: 0 5px 5px 0;
+
+  background: #f6f9f6;
+
+  color: #2d342f;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Keyboard */
+
+.questionHelp_button:focus-visible {
+  outline: 3px solid rgba(8, 127, 62, 0.18);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .questionHelp {
+    margin-top: 5px;
+  }
+
+  .questionHelp_button {
+    min-height: 32px;
+    font-size: 12px;
+  }
+
+  .questionHelp_text {
+    margin-top: 5px;
+
+    padding: 8px 10px;
+
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}

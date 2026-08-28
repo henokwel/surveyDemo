@@ -1,4 +1,5 @@
 import Radio from "./Checkbox"
+import QuestionHelp from "./QuestionHelp"
 
 function SingleQ_Card({ questionsBySection, currentSectionIndex, language, handleAnswers, answers }) {
 
@@ -6,18 +7,26 @@ function SingleQ_Card({ questionsBySection, currentSectionIndex, language, handl
     const paginationArr_ = Object.values(questionsBySection)
 
     const itemID = paginationArr_[currentSectionIndex][0].id
+    const question = paginationArr_[currentSectionIndex][0].question
+    const helperText = paginationArr_[currentSectionIndex][0]?.helpText
+    console.log(question);
+
     return (
         <div className='question_card'>
 
             <div className='question_container'>
-                <p>{paginationArr_[currentSectionIndex][0].question[language]}</p>
+                <p>{question[language]}</p>
 
+                <QuestionHelp
+                    language={language}
+                    helpText={helperText[language]}
+                />
             </div>
 
             {
                 paginationArr_[currentSectionIndex][0].options.map(item =>
                     <div className="option_container singleQView" key={item.value}>
-                        <div className="inputDiv ">
+                        <div className="inputDiv inputDiv_singleQView">
                             <Radio
                                 key={item.value}
                                 type='radio'
@@ -37,25 +46,6 @@ function SingleQ_Card({ questionsBySection, currentSectionIndex, language, handl
                 )
             }
 
-            {/* <div className="option_container">
-
-                <div className='inputDiv'>
-                    <Radio
-                        aria-label="Often"
-                        name="frequency"
-                        value="often"
-                    // checked={answer === "often"}
-                    // onChange={(event) => setAnswer(event.target.value)}
-                    />
-                    <label className='mobile_label' htmlFor="one">No</label>
-                </div>
-
-                <div className='inputDiv'>
-                    <Radio />
-                    <label className='mobile_label' htmlFor="one">Yes, mainly due to insecurity, crime, and disturbances of the peace</label>
-                </div>
-
-            </div> */}
         </div>
     )
 }

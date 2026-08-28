@@ -1,4 +1,5 @@
 import '../src/App.css'
+import SurveyPreviewCard from './components/BetterUI_2'
 export const About = () => {
 
     return (
@@ -6,7 +7,7 @@ export const About = () => {
               <div className="container">
                 {/* <MultipleQ_Card /> */}
                 {/* <SingleQ_Card /> */}
-               
+               <SurveyPreviewCard />
         
               </div>
               <div className='pagination_container'>

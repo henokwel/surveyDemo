@@ -1,4 +1,5 @@
 import Radio from "./Checkbox"
+import QuestionHelp from "./QuestionHelp";
 
 
 export const MultipleQ_Card = ({ questionsBySection, currentSectionIndex, language, handleAnswers, answers }) => {
@@ -12,8 +13,9 @@ export const MultipleQ_Card = ({ questionsBySection, currentSectionIndex, langua
     return (
         <div className='question_card' >
             <div className='question_container'>
-                <h3>{sectionTitles[currentSectionIndex]}</h3>
+                <p id="sectionTitle">{sectionTitles[currentSectionIndex]}</p>
                 <p>{paginationArr_[currentSectionIndex][0].section_subTitle[language]}</p>
+
 
             </div>
 
@@ -37,11 +39,19 @@ export const MultipleQ_Card = ({ questionsBySection, currentSectionIndex, langua
 
                 {
                     paginationArr_[currentSectionIndex].map(item => {
+                        console.log(item);
+
                         return (
                             <>
                                 <div className="choice_item" id={item.id}>
                                     <div className="choice_label">
                                         <p>{item.question[language]}</p>
+
+                                        <QuestionHelp
+                                            language={language}
+                                            helpText={item.helpText[language]}
+                                        />
+
                                     </div>
                                     <div className="choice_input">
 

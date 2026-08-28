@@ -2,21 +2,20 @@
 import './App.css'
 import { useState, useEffect, useMemo } from 'react'
 import { MultipleQ_Card } from './components/MultipleQ_Card'
-import { surveyQuestions_0, type LanguageType } from './Q3'
+import { surveyQuestions_0, type LanguageType, paginationHint, type SurveyQuestion } from './Q3'
 import SingleQ_Card from './components/SingleQ_Card'
 import LanguageDropdown from './components/LangDropDown'
 
 function App() {
   const [currentSectionIndex, setcurrentSectionIndex] = useState(0)
+  const [skippedQuestion, setSkippedQuestion] = useState(false)
   const [answers, setAnswers] = useState([])
   const [answerCheck, setAnswerCheck] = useState([])
   const [isSurveyComplete, setEndOfSurvey] = useState(false)
   const [language, setLanguage] = useState<LanguageType>("sv")
 
   const handleLangChange = (newLang: LanguageType) => {
-    console.log(newLang);
     setLanguage(newLang)
-
   }
 
 
@@ -27,16 +26,16 @@ function App() {
       acc[sectionTitle].push(question)
 
       return acc
-    }, {})
+    }, {} as { [key: string]: SurveyQuestion[] })
   }, [language])
 
-  const sectionTitles = Object.keys(questionsBySection)
+  // const sectionTitles = Object.keys(questionsBySection)
   const sectionQuestionGroups = Object.values(questionsBySection)
 
 
   useEffect(() => {
     const sectionArr = Object.values(questionsBySection).map(item => {
-      // console.log(item);
+      console.log(item);
       return item.map(item => {
         return { id: item.id, check: false }
       })
@@ -56,40 +55,43 @@ function App() {
   const handleSectionNavigation = (type: "Back" | "Next") => {
 
     const isCurrentSectionComplete = (answerCheck[currentSectionIndex].find(item => item.check === false))
-    console.log("isCurrentSectionComplete ", isCurrentSectionComplete);
-
+    // console.log("isCurrentSectionComplete ", isCurrentSectionComplete);
+    // console.log("isCurrentSectionComplete anser ", answerCheck[currentSectionIndex]);
     if (type === "Next") {
 
       if (isCurrentSectionComplete) {
-
+        // console.log("isCurrentSectionComplete true ", isCurrentSectionComplete);
+        setSkippedQuestion(true)
         return
       }
+      setSkippedQuestion(false)
 
       if (isLastSection) {
+        console.log("isLastSection ", isLastSection, sectionQuestionGroups.length);
+
         setEndOfSurvey(true)
+        window.location.href = "https://www.origogroup.com"
       }
       setcurrentSectionIndex(index => index + 1)
-    } else if (type === "Back") {
-      setcurrentSectionIndex(index => Math.max(0, index - 1))
 
+    } else if (type === "Back") {
+
+      setSkippedQuestion(false)
+      setcurrentSectionIndex(index => Math.max(0, index - 1))
     }
   }
 
   const handleAnswers = (id, ans) => {
-    console.log("ans id ", id);
-    console.log("ans ans ", ans);
 
     setAnswers((prev) => ({
       ...prev,
       [id]: ans
     }))
 
-
     const currentPage = answerCheck[currentSectionIndex]
     console.log(currentPage);
 
     const newCheckAnswer = currentPage.map(item => {
-      // console.log(currentPage.find(item => item.id === id));
 
       const checkForSelectedAnswer = currentPage.find(item => item.id === id).check === false
 
@@ -103,9 +105,7 @@ function App() {
   }
 
 
-  const currentQuestionType = sectionQuestionGroups[currentSectionIndex][0]?.section_subTitle
-
-  console.log(currentQuestionType);
+  const currentQuestionType = sectionQuestionGroups[currentSectionIndex]?.[0]?.section_subTitle
 
   return (
     <div className='app'>
@@ -136,6 +136,12 @@ function App() {
                 />
 
             }
+
+            <div className='navigation-hint'>
+              {
+                skippedQuestion ? <p>{paginationHint[language]}</p> : <></>
+              }
+            </div>
           </div>
 
           <div className='pagination_container'>
@@ -147,7 +153,9 @@ function App() {
               onClick={() => handleSectionNavigation("Next")}>Next</button>
           </div>
 
-        </> :
+
+        </>
+        :
         <div>
           <p>End</p>
         </div>
