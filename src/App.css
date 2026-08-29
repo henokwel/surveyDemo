@@ -39,6 +39,7 @@
 
 .question_container {
   margin-bottom: 20px;
+  max-width: 65ch;
 }
 .question_container p {
   margin-bottom: 5px;
@@ -121,14 +122,16 @@ input[type="radio"] {
 /* Add bottom line for multi on mobile view and add even background grey */
 
 .choice_item {
-  border-bottom: 2px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .choice_item:nth-last-child(-n + 1) {
   border-bottom: none;
+  /* border-bottom: 1px solid #e4e4e4; */
 }
 .choice_item:nth-child(even) {
-  background: #f3f3f3;
+  /* background: #f3f3f3; */
+  background: #f8f9f8;
 }
 
 .choices_container:nth-last-child(-n + 1) {
@@ -141,10 +144,12 @@ input[type="radio"] {
   padding-left: 5px;
   padding-top: 1px;
   margin-bottom: 10px;
+  max-width: 65ch;
 }
 
 .choice_label p {
   margin-bottom: 0;
+  font-weight: 500;
 }
 .choices_container:nth-child(even) {
   background: #f3f3f3;
@@ -182,10 +187,10 @@ input[type="radio"] {
   .container {
     width: 1000px;
     min-height: fit-content;
-    margin-top: 100px;
-    padding: 20px 60px 20px 60px;
+    margin-top: 50px;
+    padding: 20px 40px 20px 40px;
     background: white;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
 
@@ -245,14 +250,14 @@ input[type="radio"] {
     min-height: 60px;
     /* margin-top: 15px; */
     font-weight: 600;
-    border-bottom: 2px solid #bebebe;
+    border-bottom: 1px solid #bebebe;
   }
 
   .choice_input div {
     margin-bottom: 0;
   }
   .choice_item:nth-last-child(-n + 1) {
-    border-bottom: none;
+    /* border-bottom: none; */
   }
   .choice_input {
     display: flex;
@@ -280,6 +285,10 @@ input[type="radio"] {
     text-align: center;
     padding-left: 5px;
   }
+
+  .choice_label p {
+    font-weight: 500;
+  }
   .optionLabel p {
     text-align: center;
     margin-right: 5px;
@@ -290,9 +299,9 @@ input[type="radio"] {
   .pagination_container {
     align-items: end;
     min-height: 120px;
-    min-width: 1000px;
+    /* min-width: 1000px; */
     background: white;
-    padding: 0px 60px 30px;
+    padding: 0px 40px 30px;
     border-radius: 0 0 5px 5px;
     border-top: 5px solid #e4e4e4;
     margin: 0;

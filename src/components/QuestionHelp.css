@@ -1,7 +1,7 @@
 .questionHelp {
   display: flex;
   flex-direction: column;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
 }
 
 /* "i  Vad menas?" */
@@ -11,16 +11,13 @@
   align-items: center;
   gap: 6px;
   padding: 6px 0;
-
   border: 0;
   background: transparent;
-
-  color: #054120;
-
+  width: fit-content;
+  color: #054120cc;
   font: inherit;
   font-size: 12px;
   font-weight: 600;
-
   cursor: pointer;
 }
 

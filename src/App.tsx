@@ -151,16 +151,16 @@ function App() {
                 skippedQuestion ? <p>{paginationHint[language]}</p> : <></>
               }
             </div>
+            <div className='pagination_container'>
+              <button
+                disabled={isFirstSection}
+                onClick={() => handleSectionNavigation("Back")}>Back</button>
+              <button
+                // disabled={isLastSection}
+                onClick={() => handleSectionNavigation("Next")}>Next</button>
+            </div>
           </div>
 
-          <div className='pagination_container'>
-            <button
-              disabled={isFirstSection}
-              onClick={() => handleSectionNavigation("Back")}>Back</button>
-            <button
-              // disabled={isLastSection}
-              onClick={() => handleSectionNavigation("Next")}>Next</button>
-          </div>
 
           <DemoToggle
             enabled={improvedUI}

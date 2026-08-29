@@ -615,106 +615,106 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         required: true,
         options: areaProblemOptions
     },
-    {
-        id: "problem-mopeds-paths",
-        section: {
-            sv: "Problem i området där du bor",
-            sv_easy: "Problem där du bor",
-            en: "Problems in the area where you live", en_easy: "Problems where you live"
-        },
-        section_subTitle: {
-            sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-            sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-            en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-        },
-        question: {
-            sv: "Mopeder eller motorcyklar på gång- eller cykelvägar",
-            sv_easy: "Mopeder eller motorcyklar på gångvägar eller cykelvägar",
-            en: "Mopeds or motorbikes on footpaths or bicycle paths", en_easy: "Mopeds or motorbikes on walking or bicycle paths"
-        },
-        helpText: {
-            sv: "Frågan gäller mopeder eller motorcyklar som körs på vägar som främst är avsedda för gående eller cyklister.",
-            sv_easy: "Det betyder mopeder eller motorcyklar som kör där människor går eller cyklar.",
-            en: "This refers to mopeds or motorbikes being driven on paths mainly intended for pedestrians or cyclists.",
-            en_easy: "This means mopeds or motorbikes being driven where people walk or cycle."
-        },
-        required: true,
-        options: areaProblemOptions
-    },
-    {
-        id: "problem-cars-paths",
-        section: {
-            sv: "Problem i området där du bor",
-            sv_easy: "Problem där du bor",
-            en: "Problems in the area where you live", en_easy: "Problems where you live"
-        },
-        section_subTitle: {
-            sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-            sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-            en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-        },
-        question: {
-            sv: "Bilar på gång- eller cykelvägar",
-            sv_easy: "Bilar på gångvägar eller cykelvägar",
-            en: "Cars on footpaths or bicycle paths", en_easy: "Cars on walking or bicycle paths"
-        },
-        helpText: {
-            sv: "Frågan gäller bilar som körs på vägar som främst är avsedda för gående eller cyklister.",
-            sv_easy: "Det betyder bilar som kör där människor går eller cyklar.",
-            en: "This refers to cars being driven on paths mainly intended for pedestrians or cyclists.",
-            en_easy: "This means cars being driven where people walk or cycle."
-        },
-        required: true,
-        options: areaProblemOptions
-    },
-    {
-        id: "problem-rowdy-neighbours",
-        section: {
-            sv: "Problem i området där du bor",
-            sv_easy: "Problem där du bor",
-            en: "Problems in the area where you live", en_easy: "Problems where you live"
-        },
-        section_subTitle: {
-            sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-            sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-            en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-        },
-        question: { sv: "Stökiga grannar", sv_easy: "Grannar som stör", en: "Rowdy neighbours", en_easy: "Neighbours who cause problems" },
-        helpText: {
-            sv: "Med stökiga grannar menas grannar som stör genom till exempel högt ljud, bråk eller annat stök.",
-            sv_easy: "Det betyder grannar som stör, till exempel genom högt ljud eller bråk.",
-            en: "Rowdy neighbours means neighbours who disturb others, for example through loud noise, arguments or other disruptive behaviour.",
-            en_easy: "This means neighbours who disturb others, for example with loud noise or arguments."
-        },
-        required: true,
-        options: areaProblemOptions
-    },
-    {
-        id: "problem-drunk-people",
-        section: {
-            sv: "Problem i området där du bor",
-            sv_easy: "Problem där du bor",
-            en: "Problems in the area where you live", en_easy: "Problems where you live"
-        },
-        section_subTitle: {
-            sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-            sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-            en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-        },
-        question: {
-            sv: "Berusade personer som stör",
-            sv_easy: "Fulla personer som stör",
-            en: "Drunk people who cause a nuisance", en_easy: "Drunk people who disturb others"
-        },
-        helpText: {
-            sv: "Frågan gäller berusade personer som genom sitt beteende stör andra på allmän plats.",
-            sv_easy: "Det betyder fulla personer som stör andra ute på allmänna platser.",
-            en: "This refers to drunk people whose behaviour disturbs others in public places.",
-            en_easy: "This means drunk people who disturb others in public places."
-        },
-        required: true,
-        options: areaProblemOptions
-    },
+    // {
+    //     id: "problem-mopeds-paths",
+    //     section: {
+    //         sv: "Problem i området där du bor",
+    //         sv_easy: "Problem där du bor",
+    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
+    //     },
+    //     section_subTitle: {
+    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
+    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
+    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
+    //     },
+    //     question: {
+    //         sv: "Mopeder eller motorcyklar på gång- eller cykelvägar",
+    //         sv_easy: "Mopeder eller motorcyklar på gångvägar eller cykelvägar",
+    //         en: "Mopeds or motorbikes on footpaths or bicycle paths", en_easy: "Mopeds or motorbikes on walking or bicycle paths"
+    //     },
+    //     helpText: {
+    //         sv: "Frågan gäller mopeder eller motorcyklar som körs på vägar som främst är avsedda för gående eller cyklister.",
+    //         sv_easy: "Det betyder mopeder eller motorcyklar som kör där människor går eller cyklar.",
+    //         en: "This refers to mopeds or motorbikes being driven on paths mainly intended for pedestrians or cyclists.",
+    //         en_easy: "This means mopeds or motorbikes being driven where people walk or cycle."
+    //     },
+    //     required: true,
+    //     options: areaProblemOptions
+    // },
+    // {
+    //     id: "problem-cars-paths",
+    //     section: {
+    //         sv: "Problem i området där du bor",
+    //         sv_easy: "Problem där du bor",
+    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
+    //     },
+    //     section_subTitle: {
+    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
+    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
+    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
+    //     },
+    //     question: {
+    //         sv: "Bilar på gång- eller cykelvägar",
+    //         sv_easy: "Bilar på gångvägar eller cykelvägar",
+    //         en: "Cars on footpaths or bicycle paths", en_easy: "Cars on walking or bicycle paths"
+    //     },
+    //     helpText: {
+    //         sv: "Frågan gäller bilar som körs på vägar som främst är avsedda för gående eller cyklister.",
+    //         sv_easy: "Det betyder bilar som kör där människor går eller cyklar.",
+    //         en: "This refers to cars being driven on paths mainly intended for pedestrians or cyclists.",
+    //         en_easy: "This means cars being driven where people walk or cycle."
+    //     },
+    //     required: true,
+    //     options: areaProblemOptions
+    // },
+    // {
+    //     id: "problem-rowdy-neighbours",
+    //     section: {
+    //         sv: "Problem i området där du bor",
+    //         sv_easy: "Problem där du bor",
+    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
+    //     },
+    //     section_subTitle: {
+    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
+    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
+    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
+    //     },
+    //     question: { sv: "Stökiga grannar", sv_easy: "Grannar som stör", en: "Rowdy neighbours", en_easy: "Neighbours who cause problems" },
+    //     helpText: {
+    //         sv: "Med stökiga grannar menas grannar som stör genom till exempel högt ljud, bråk eller annat stök.",
+    //         sv_easy: "Det betyder grannar som stör, till exempel genom högt ljud eller bråk.",
+    //         en: "Rowdy neighbours means neighbours who disturb others, for example through loud noise, arguments or other disruptive behaviour.",
+    //         en_easy: "This means neighbours who disturb others, for example with loud noise or arguments."
+    //     },
+    //     required: true,
+    //     options: areaProblemOptions
+    // },
+    // {
+    //     id: "problem-drunk-people",
+    //     section: {
+    //         sv: "Problem i området där du bor",
+    //         sv_easy: "Problem där du bor",
+    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
+    //     },
+    //     section_subTitle: {
+    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
+    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
+    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
+    //     },
+    //     question: {
+    //         sv: "Berusade personer som stör",
+    //         sv_easy: "Fulla personer som stör",
+    //         en: "Drunk people who cause a nuisance", en_easy: "Drunk people who disturb others"
+    //     },
+    //     helpText: {
+    //         sv: "Frågan gäller berusade personer som genom sitt beteende stör andra på allmän plats.",
+    //         sv_easy: "Det betyder fulla personer som stör andra ute på allmänna platser.",
+    //         en: "This refers to drunk people whose behaviour disturbs others in public places.",
+    //         en_easy: "This means drunk people who disturb others in public places."
+    //     },
+    //     required: true,
+    //     options: areaProblemOptions
+    // },
     // {
     //     id: "problem-drug-residences",
     //     section: {
@@ -890,8 +890,8 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         },
         question: {
             sv: "Att du oroat dig för att bli utsatt för inbrott i den egna bostaden?",
-            sv_easy: "att du varit orolig för inbrott i ditt hem?",
-            en: "that you have worried about being the victim of burglary in your own home?", en_easy: "worried that someone might break into your home?"
+            sv_easy: "Att du varit orolig för inbrott i ditt hem?",
+            en: "That you have worried about being the victim of burglary in your own home?", en_easy: "Worried that someone might break into your home?"
         },
         helpText: {
             sv: "Frågan gäller hur ofta du har känt oro för inbrott i din bostad under de senaste 12 månaderna, inte om ett inbrott faktiskt har skett.",
@@ -916,8 +916,9 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         },
         question: {
             sv: "Att du oroat dig för att bli utsatt för inbrott i förråd, källare, vindsutrymme eller garage?",
-            sv_easy: "att du varit orolig för inbrott i ditt förråd, din källare, vind eller garage?",
-            en: "that you have worried about being the victim of burglary in your storage unit, basement, attic or garage?", en_easy: "worried that someone might break into your storage room, basement, attic or garage?"
+            sv_easy: "Att du varit orolig för inbrott i ditt förråd, din källare, vind eller garage?",
+            en: "That you have worried about being the victim of burglary in your storage unit, basement, attic or garage?",
+             en_easy: "Worried that someone might break into your storage room, basement, attic or garage?"
         },
         helpText: {
             sv: "Frågan gäller hur ofta du har känt oro för inbrott i förråd, källare, vindsutrymme eller garage under de senaste 12 månaderna.",
@@ -942,8 +943,9 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         },
         question: {
             sv: "Att du oroat dig för att din bil, motorcykel, moped eller cykel ska utsättas för stöld eller skadegörelse om den är parkerad i området där du bor?",
-            sv_easy: "att du varit orolig för att någon ska stjäla eller skada din bil, motorcykel, moped eller cykel där du bor?",
-            en: "that you have worried that your car, motorcycle, moped or bicycle will be subjected to theft or vandalism if it is parked in the area where you live?", en_easy: "worried that your car, motorcycle, moped or bicycle might be stolen or damaged where you live?"
+            sv_easy: "Att du varit orolig för att någon ska stjäla eller skada din bil, motorcykel, moped eller cykel där du bor?",
+            en: "That you have worried that your car, motorcycle, moped or bicycle will be subjected to theft or vandalism if it is parked in the area where you live?",
+             en_easy: "Worried that your car, motorcycle, moped or bicycle might be stolen or damaged where you live?"
         },
         helpText: {
             sv: "Frågan gäller hur ofta du har känt oro för att ditt fordon eller din cykel ska bli stulen eller skadad när den är parkerad där du bor.",
@@ -968,8 +970,9 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         },
         question: {
             sv: "Att du oroat dig för att bli överfallen eller misshandlad i området där du bor?",
-            sv_easy: "att du varit orolig för att någon ska överfalla eller slå dig där du bor?",
-            en: "that you have worried about being assaulted or physically abused in the area where you live?", en_easy: "worried that someone might attack or hurt you where you live?"
+            sv_easy: "Att du varit orolig för att någon ska överfalla eller slå dig där du bor?",
+            en: "That you have worried about being assaulted or physically abused in the area where you live?", 
+            en_easy: "Worried that someone might attack or hurt you where you live?"
         },
         helpText: {
             sv: "Frågan gäller hur ofta du har känt oro för att bli överfallen eller misshandlad i området där du bor under de senaste 12 månaderna.",
