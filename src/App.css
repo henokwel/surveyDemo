@@ -87,12 +87,26 @@ input[type="radio"] {
 
 .pagination_container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  /* justify-content: center; */
   /* background: grey; */
   margin: 15px 0 15px 0;
 }
 
 .pagination_container button {
+  font-size: 20px;
+  width: 150px;
+  height: 45px;
+  background: green;
+  color: white;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.ending button {
   font-size: 20px;
   width: 150px;
   height: 45px;
@@ -161,6 +175,10 @@ input[type="radio"] {
   margin-bottom: 15px;
 }
 
+.survery_endMsg {
+  width: fit-content;
+  font-size: 14px;
+}
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 768px) {
   .app {
@@ -174,6 +192,11 @@ input[type="radio"] {
   }
   .container {
     min-width: 650px;
+  }
+
+  .survery_endMsg {
+    width: 65ch;
+    font-size: 15px;
   }
 }
 
@@ -296,8 +319,15 @@ input[type="radio"] {
     text-wrap: wrap;
   }
 
+  .survery_endMsg {
+    width: 65ch;
+    font-size: 15px;
+  }
   .pagination_container {
-    align-items: end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* align-items: end; */
     min-height: 120px;
     /* min-width: 1000px; */
     background: white;

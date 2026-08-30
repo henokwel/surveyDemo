@@ -6,6 +6,7 @@ import { surveyQuestions_0, type LanguageType, paginationHint, type SurveyQuesti
 import SingleQ_Card from './components/SingleQ_Card'
 import LanguageDropdown from './components/LangDropDown'
 import DemoToggle from './components/DemoToggle'
+import { FinalMessage } from './components/FinalMessage'
 
 function App() {
   const [currentSectionIndex, setcurrentSectionIndex] = useState(0)
@@ -109,6 +110,11 @@ function App() {
 
 
   const currentQuestionType = sectionQuestionGroups[currentSectionIndex]?.[0]?.section_subTitle
+  const currentSection = sectionQuestionGroups[currentSectionIndex]
+
+  const finalMsg = currentSection?.at(-1)?.finalMsg
+
+
 
   return (
     <div className='app'>
@@ -151,13 +157,23 @@ function App() {
                 skippedQuestion ? <p>{paginationHint[language]}</p> : <></>
               }
             </div>
+
+
+
             <div className='pagination_container'>
-              <button
-                disabled={isFirstSection}
-                onClick={() => handleSectionNavigation("Back")}>Back</button>
-              <button
-                // disabled={isLastSection}
-                onClick={() => handleSectionNavigation("Next")}>Next</button>
+              {finalMsg && (
+                <FinalMessage message={finalMsg[language]} />
+              )}
+              {/* <FinalMessage message={finalMsg[language]} /> */}
+              <div>
+
+                <button
+                  disabled={isFirstSection}
+                  onClick={() => handleSectionNavigation("Back")}>Back</button>
+                <button
+                  // disabled={isLastSection}
+                  onClick={() => handleSectionNavigation("Next")}>Next</button>
+              </div>
             </div>
           </div>
 
@@ -168,8 +184,9 @@ function App() {
           />
         </>
         :
-        <div>
-          <p>End</p>
+        <div className='ending'>
+          {/* <h1>The End</h1> */}
+          <button onClick={() => window.location.reload()}>Restart</button>
         </div>
       }
 

@@ -6,6 +6,10 @@ export const paginationHint = {
     en: "Answer all questions to continue.",
     en_easy: "Answer every question. Then you can continue.",
 }
+
+type FinalMessageProps = {
+    message: string[]
+}
 export type LocalizedText = {
     sv: string;
     sv_easy: string;
@@ -25,7 +29,7 @@ export type SurveyQuestion = {
     question: LocalizedText;
     helpText?: LocalizedText;
     required: boolean;
-    finalMsg?: LocalizedText;
+    finalMsg?: FinalMessageProps;
     options: SurveyOption[];
 };
 export const languageOptions: { value: LanguageType; label: string }[] = [
@@ -1001,13 +1005,25 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         required: true,
         options: householdOptions,
         finalMsg: {
-            sv: "Du har nu kommit till slutet av enkäten. Om du vill gå tillbaka och ändra något av dina svar kan du göra det med hjälp av knapparna längst ner. \nNär du klickar på Skicka in låses enkäten och dina svar skickas in.",
+            sv: [
+                "Du har nu kommit till slutet av enkäten. Om du vill gå tillbaka och ändra något av dina svar kan du göra det med hjälp av knapparna längst ner.",
+                "När du klickar på Skicka in låses enkäten och dina svar skickas in."
+            ],
 
-            sv_easy: "Du är nu klar med enkäten. Du kan gå tillbaka och ändra dina svar med knapparna längst ner. \nNär du klickar på Skicka in kan du inte ändra dina svar längre. Då skickas enkäten in.",
+            sv_easy: [
+                "Du är nu klar med enkäten. Du kan gå tillbaka och ändra dina svar med knapparna längst ner.",
+                "När du klickar på Skicka in kan du inte längre ändra dina svar. Då skickas enkäten in."
+            ],
 
-            en: "You have now reached the end of the questionnaire. If you want to go back and edit any of your answers, you can do so using the buttons at the bottom. \nOnce you click Submit, the questionnaire will be locked and submitted.",
+            en: [
+                "You have now reached the end of the questionnaire. If you want to go back and edit any of your answers, you can do so using the buttons at the bottom.",
+                "Once you click Submit, the questionnaire will be locked and submitted."
+            ],
 
-            en_easy: "You are now at the end of the survey. You can use the buttons below to go back and change your answers. \nOnce you click Submit, you cannot change your answers anymore. The survey will then be submitted."
+            en_easy: [
+                "You are now at the end of the survey. You can use the buttons below to go back and change your answers.",
+                "Once you click Submit, you cannot change your answers anymore. The survey will then be submitted."
+            ]
         }
     },
 ];
