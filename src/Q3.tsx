@@ -918,7 +918,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv: "Att du oroat dig för att bli utsatt för inbrott i förråd, källare, vindsutrymme eller garage?",
             sv_easy: "Att du varit orolig för inbrott i ditt förråd, din källare, vind eller garage?",
             en: "That you have worried about being the victim of burglary in your storage unit, basement, attic or garage?",
-             en_easy: "Worried that someone might break into your storage room, basement, attic or garage?"
+            en_easy: "Worried that someone might break into your storage room, basement, attic or garage?"
         },
         helpText: {
             sv: "Frågan gäller hur ofta du har känt oro för inbrott i förråd, källare, vindsutrymme eller garage under de senaste 12 månaderna.",
@@ -945,7 +945,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv: "Att du oroat dig för att din bil, motorcykel, moped eller cykel ska utsättas för stöld eller skadegörelse om den är parkerad i området där du bor?",
             sv_easy: "Att du varit orolig för att någon ska stjäla eller skada din bil, motorcykel, moped eller cykel där du bor?",
             en: "That you have worried that your car, motorcycle, moped or bicycle will be subjected to theft or vandalism if it is parked in the area where you live?",
-             en_easy: "Worried that your car, motorcycle, moped or bicycle might be stolen or damaged where you live?"
+            en_easy: "Worried that your car, motorcycle, moped or bicycle might be stolen or damaged where you live?"
         },
         helpText: {
             sv: "Frågan gäller hur ofta du har känt oro för att ditt fordon eller din cykel ska bli stulen eller skadad när den är parkerad där du bor.",
@@ -971,7 +971,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         question: {
             sv: "Att du oroat dig för att bli överfallen eller misshandlad i området där du bor?",
             sv_easy: "Att du varit orolig för att någon ska överfalla eller slå dig där du bor?",
-            en: "That you have worried about being assaulted or physically abused in the area where you live?", 
+            en: "That you have worried about being assaulted or physically abused in the area where you live?",
             en_easy: "Worried that someone might attack or hurt you where you live?"
         },
         helpText: {
@@ -1001,9 +1001,13 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         required: true,
         options: householdOptions,
         finalMsg: {
-            sv: "Du har nu kommit till slutet av enkäten. Om du vill gå tillbaka och ändra något av dina svar kan du göra det med hjälp av knapparna längst ner.",
-            sv_easy: "Du är nu klar med enkäten. Du kan gå tillbaka och ändra dina svar med knapparna längst ner.",
-            en: "You have now reached the end of the questionnaire. If you want to go back and edit any of your answers, you can do so using the buttons at the bottom.", en_easy: "You are at the end of the survey. You can use the buttons below to go back and change your answers."
+            sv: "Du har nu kommit till slutet av enkäten. Om du vill gå tillbaka och ändra något av dina svar kan du göra det med hjälp av knapparna längst ner. \nNär du klickar på Skicka in låses enkäten och dina svar skickas in.",
+
+            sv_easy: "Du är nu klar med enkäten. Du kan gå tillbaka och ändra dina svar med knapparna längst ner. \nNär du klickar på Skicka in kan du inte ändra dina svar längre. Då skickas enkäten in.",
+
+            en: "You have now reached the end of the questionnaire. If you want to go back and edit any of your answers, you can do so using the buttons at the bottom. \nOnce you click Submit, the questionnaire will be locked and submitted.",
+
+            en_easy: "You are now at the end of the survey. You can use the buttons below to go back and change your answers. \nOnce you click Submit, you cannot change your answers anymore. The survey will then be submitted."
         }
     },
 ];
