@@ -1,37 +1,26 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:ital,wght@0,100..900;1,100..900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Libertinus+Serif+Display&family=Miranda+Sans:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Telex&display=swap'); */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
+/* App layout */
+
 .app {
-  height: 100%;
-  min-height: 100vh;
-  /* background: rgb(255, 0, 0); */
   display: flex;
   flex-direction: column;
-  font-family: "Inter", sans-serif;
-  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
-  /* font-family: "Telex", sans-serif; */
-  /* font-family: "Libertinus Sans", sans-serif; */
-  /* font-family: "Roboto", sans-serif; */
-  /* font-family: "Nunito", sans-serif; */
-  /* font-family: "Miranda Sans", sans-serif; */
-  /* font-family: "DM Sans", sans-serif; */
-  /* font-family: "Geist", sans-serif; */
-  /* font-family: "Arimo", sans-serif; */
-  /* font-weight: 400; */
+  min-height: 100vh;
+  height: 100%;
   background: white;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
-  /* font-optical-sizing: auto; */
   font-weight: 400;
   font-style: normal;
   line-height: 1.5;
 }
 
 .container {
-  /* height: fit-content; */
   min-height: 300px;
-  /* background: rgba(172, 255, 47, 0.443); */
   padding: 15px;
 }
+
+/* Question cards */
 
 .question_card {
   min-width: 0;
@@ -42,22 +31,25 @@
 }
 
 .question_container {
-  margin-bottom: 20px;
   max-width: 65ch;
+  margin-bottom: 20px;
 }
+
 .question_container p {
   margin-bottom: 5px;
 }
+
+#sectionTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Options and radio inputs */
 
 .option_container {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
-}
-
-#sectionTitle {
-  font-weight: 700;
-  font-size: 20px;
 }
 
 .option_container div {
@@ -67,10 +59,9 @@
 }
 
 input[type="radio"] {
-  height: 30px;
   width: 30px;
+  height: 30px;
   vertical-align: middle;
-  /* color: green; */
 }
 
 .inputDiv label {
@@ -79,65 +70,28 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-.navigation-hint {
-  padding-top: 10px;
-  text-align: center;
-  font-size: 14px;
-  color: #054120;
-}
-.navigation-hint p {
-  margin: 0;
-}
-
-.pagination_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
-  /* justify-content: center; */
-  /* background: grey; */
-  margin: 15px 0 15px 0;
-}
-
-.pagination_container button {
-  font-size: 20px;
-  width: 150px;
-  height: 45px;
-  background: green;
-  color: white;
-  border: none;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.ending button {
-  font-size: 20px;
-  width: 150px;
-  height: 45px;
-  background: green;
-  color: white;
-  border: none;
-  margin: 10px;
-  cursor: pointer;
-}
 .inputDiv_singleQView {
   align-items: center;
 }
-/* Hide multiview */
+
+/* Multiple-question card */
+
 .multi_option {
   display: none;
 }
-.choice_input {
-  font-weight: 400;
-}
+
 .choices_container {
-  /* background-color:grey; */
-  /* margin-top: 15px; */
   font-weight: 600;
   border-bottom: 3px solid #e4e4e4;
 }
 
-/* Add bottom line for multi on mobile view and add even background grey */
+.choices_container:last-child {
+  border-bottom: none;
+}
+
+.choices_container:nth-child(even) {
+  background: #f3f3f3;
+}
 
 .choice_item {
   min-width: 0;
@@ -147,36 +101,33 @@ input[type="radio"] {
   border-bottom: 1px solid #e4e4e4;
 }
 
-.choice_item:nth-last-child(-n + 1) {
+.choice_item:last-child {
   border-bottom: none;
-  /* border-bottom: 1px solid #e4e4e4; */
 }
+
 .choice_item:nth-child(even) {
   background: #f8f9f8;
 }
-/* .choice_item:nth-child(even) {
-  background: #f8f9f8;
-} */
-
-.choices_container:nth-last-child(-n + 1) {
-  border-bottom: none;
-}
 
 .choice_label {
-  /* background: red; */
-  /* margin: 16px 0 16px 0; */
-  padding-left: 5px;
-  padding-top: 1px;
-  margin-bottom: 10px;
+  width: stretch;
   max-width: 65ch;
+  margin-bottom: 10px;
+  padding-top: 1px;
+  padding-left: 5px;
 }
 
 .choice_label p {
   margin-bottom: 0;
   font-weight: 500;
 }
-.choices_container:nth-child(even) {
-  background: #f3f3f3;
+
+.choices_container > .choice_item:nth-child(even) > .choice_label {
+  background: #f8f9f8;
+}
+
+.choice_input {
+  font-weight: 400;
 }
 
 .choice_input div {
@@ -185,66 +136,85 @@ input[type="radio"] {
   margin-bottom: 15px;
 }
 
+/* Navigation and survey messages */
+
+.navigation-hint {
+  padding-top: 10px;
+  color: #054120;
+  font-size: 14px;
+  text-align: center;
+}
+
+.navigation-hint p {
+  margin: 0;
+}
+
+.pagination_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  margin: 15px 0;
+}
+
+.pagination_container button,
+.ending button {
+  width: 150px;
+  height: 45px;
+  margin: 10px;
+  border: none;
+  background: green;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .survery_endMsg {
   width: fit-content;
   font-size: 14px;
 }
 
-.choice_label {
-  /* background: green; */
-  width: stretch;
-  /* width: 100%; */
-}
+/* Tablet and larger */
 
-.choices_container > .choice_item:nth-child(even) > .choice_label {
-  background: #f8f9f8;
-}
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 768px) {
   .app {
     align-items: center;
-    font-size: 17px;
     padding-right: 40px;
+    font-size: 17px;
   }
 
-  .multi_option {
-    display: none;
-  }
   .container {
     min-width: 650px;
   }
-  .choice_label {
-    /* background: green; */
-    width: stretch;
-  }
+
   .survery_endMsg {
     width: 65ch;
     font-size: 15px;
   }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Desktop */
+
 @media only screen and (min-width: 1200px) {
   .app {
-    background: #e4e4e4;
     padding-right: 0;
+    background: #e4e4e4;
   }
 
   .container {
-    width: 1000px;
+    width: 900px;
     min-height: fit-content;
     margin-top: 50px;
-    padding: 20px 40px 20px 40px;
+    padding: 20px 40px;
     background: white;
     border-radius: 5px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
   }
 
-  .option_container div {
-    align-items: end;
-  }
-  .option_container .inputDiv_singleQView {
-    align-items: center;
+  .question_card {
+    display: flex;
+    flex-direction: column;
+    border-bottom: none;
   }
 
   .question_container {
@@ -254,30 +224,18 @@ input[type="radio"] {
   .option_container {
     padding-left: 15px;
   }
+
   .option_container div {
+    align-items: end;
     margin-bottom: 0;
   }
 
-  /* Only for single Q card in Desktop view */
+  .option_container .inputDiv_singleQView {
+    align-items: center;
+  }
+
   .singleQView {
     margin-bottom: 20px;
-  }
-
-  .multi_option_lables {
-    width: 100%;
-  }
-  .optionLabel {
-    /* background-color: red; */
-    /* display: flex; */
-    width: 100%;
-    justify-content: space-between;
-    /* text-align: center; */
-  }
-
-  .question_card {
-    display: flex;
-    flex-direction: column;
-    border-bottom: none;
   }
 
   .multi_option {
@@ -286,55 +244,50 @@ input[type="radio"] {
     align-self: flex-end;
     width: 500px;
   }
+
+  .multi_option_lables,
+  .optionLabel {
+    width: 100%;
+  }
+
+  .optionLabel {
+    justify-content: space-between;
+  }
+
+  .optionLabel p {
+    width: 95px;
+    margin-right: 5px;
+    text-align: center;
+    text-wrap: wrap;
+  }
+
   .multi_label {
     display: none;
   }
 
-  /* .choice_item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    min-height: 60px;
-     font-weight: 600;
-    border-bottom: 1px solid #bebebe;
-  } */
+  .multi_option input[type="radio"] {
+    display: none;
+    text-align: center;
+  }
 
   .choice_item {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
     width: 100%;
     min-width: 0;
     min-inline-size: 0;
     min-height: 60px;
-
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
     font-weight: 600;
-
-    border: 0;
-    border-bottom: 1px solid #bebebe;
-  }
-  .choice_item > .choice_label {
-    float: left;
-
-    flex: 1 1 auto;
-    min-width: 0;
-
-    margin: 0;
-    padding: 0 20px 0 0;
+    border-bottom-color: #bebebe;
   }
 
-  .choice_input div {
-    margin-bottom: 0;
+  .choice_label {
+    width: stretch;
+    background: unset;
   }
-  .choice_item:nth-last-child(-n + 1) {
-    /* border-bottom: none; */
-  }
+
   .choice_input {
     display: flex;
     justify-content: space-between;
@@ -342,54 +295,30 @@ input[type="radio"] {
   }
 
   .choice_input div {
-    min-width: 75px;
     display: flex;
     justify-content: center;
-  }
-  .multi_option input[type="radio"] {
-    display: none;
-    text-align: center;
+    min-width: 75px;
+    margin-bottom: 0;
   }
 
   .choice_input input[type="radio"] {
-    height: 30px;
     width: 30px;
+    height: 30px;
     vertical-align: middle;
   }
 
   .option_label {
-    text-align: center;
     padding-left: 5px;
+    text-align: center;
   }
 
-  .choice_label p {
-    font-weight: 500;
-  }
-  .optionLabel p {
-    text-align: center;
-    margin-right: 5px;
-    width: 95px;
-    text-wrap: wrap;
-  }
-  .choice_label {
-    background: unset;
-    width: stretch;
-  }
-  .survery_endMsg {
-    width: 65ch;
-    font-size: 15px;
-  }
   .pagination_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* align-items: end; */
     min-height: 120px;
-    /* min-width: 1000px; */
-    background: white;
-    padding: 0px 40px 30px;
-    border-radius: 0 0 5px 5px;
-    border-top: 5px solid #e4e4e4;
     margin: 0;
+    padding: 0 40px 30px;
+    background: white;
+    border-top: 5px solid #e4e4e4;
+    border-radius: 0 0 5px 5px;
   }
 }
+

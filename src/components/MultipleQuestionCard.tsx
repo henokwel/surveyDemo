@@ -1,9 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import type { QuestionCardProps } from "../types/survey";
 import Radio from "./Checkbox"
 import QuestionHelp from "./QuestionHelp";
-
-
 
 export const MultipleQuestionCard = ({ questionsBySection, currentSectionIndex, language, handleAnswers, answers, improvedUI }: QuestionCardProps) => {
 
@@ -12,6 +10,14 @@ export const MultipleQuestionCard = ({ questionsBySection, currentSectionIndex, 
     const currentSection = sectionGroups[currentSectionIndex]
     const firstQuestion = currentSection?.[0]
 
+
+    const sectionTitleRef =
+        useRef<HTMLParagraphElement>(null)
+
+    useEffect(() => {
+        sectionTitleRef.current?.focus()
+    }, [currentSectionIndex])
+
     if (!firstQuestion || !firstQuestion.section_subTitle) {
         return null
     }
@@ -19,7 +25,11 @@ export const MultipleQuestionCard = ({ questionsBySection, currentSectionIndex, 
     return (
         <div className='question_card' >
             <div className='question_container'>
-                <p id="sectionTitle">{sectionTitles[currentSectionIndex]}</p>
+                <p
+                    id="sectionTitle"
+                    ref={sectionTitleRef}
+                    tabIndex={-1}
+                >{sectionTitles[currentSectionIndex]}</p>
                 <p>{firstQuestion.section_subTitle[language]}</p>
             </div>
 
@@ -28,6 +38,7 @@ export const MultipleQuestionCard = ({ questionsBySection, currentSectionIndex, 
 
                     <div className='optionLabel'>
                         {currentSection[0].options.map(item => {
+
                             // Enable in case option text gets too long. 
                             // const labelLengthCheck = item.label[language].length > 23 ? item.short_label[language] : item.label[language]
                             return (<p key={item.label[language]}>{item.label[language]}</p>)
@@ -40,98 +51,51 @@ export const MultipleQuestionCard = ({ questionsBySection, currentSectionIndex, 
                 {
                     currentSection.map(item => {
                         return (
-                            <fieldset
-                                className="choice_item"
-                                id={item.id}
-                                key={item.id}
-                            >
-                                <legend className="choice_label">
-                                    <p>{item.question[language]}</p>
+                            <Fragment key={item.id}>
+                                <div
+                                    className="choice_item"
+                                    id={item.id}
+                                    key={item.id}
+                                    role="radiogroup"
+                                    aria-labelledby={`question-${item.id}`}
 
-                                    {improvedUI && item.helpText && (
-                                        <QuestionHelp
-                                            language={language}
-                                            helpText={item.helpText[language]}
-                                        />
-                                    )}
-                                </legend>
-
-                                <div className="choice_input">
-                                    {currentSection[0].options.map(option => {
-                                        const optionId =
-                                            `${item.id}-${option.value}`
-
-                                        return (
-                                            <div
-                                                className="inputDiv"
-                                                key={optionId}
-                                            >
-                                                <Radio
-                                                    type="radio"
-                                                    id={optionId}
-                                                    name={item.id}
-                                                    checked={
-                                                        answers[item.id] === option.value
-                                                    }
-                                                    onChange={() =>
-                                                        handleAnswers(
-                                                            item.id,
-                                                            option.value
-                                                        )
-                                                    }
-                                                    value={option.value}
+                                >
+                                    <div className="choice_label">
+                                        <p>{item.question[language]}</p>
+                                        {
+                                            improvedUI && item.helpText ?
+                                                <QuestionHelp
+                                                    language={language}
+                                                    helpText={item.helpText[language]}
                                                 />
-
-                                                <label
-                                                    className="mobile_label multi_label"
-                                                    htmlFor={optionId}
-                                                >
-                                                    {option.label[language]}
-                                                </label>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            </fieldset>
-                            // <Fragment key={item.id}>
-                            //     <div className="choice_item" id={item.id} key={item.id}>
-                            //         <div className="choice_label">
-                            //             <p>{item.question[language]}</p>
-                            //             {
-                            //                 improvedUI && item.helpText ?
-                            //                     <QuestionHelp
-                            //                         language={language}
-                            //                         helpText={item.helpText[language]}
-                            //                     />
-                            //                     : <></>
-                            //             }
-                            //         </div>
-                            //         <div className="choice_input" key={item.id} >
-
-                            //             {
-                            //                 currentSection[0].options.map(option => {
-                            //                     const optionId = `${item.id}-${option.value}`
-                            //                     return (
-                            //                         <div className="inputDiv" key={optionId}>
-                            //                             <Radio
-                            //                                 key={optionId}
-                            //                                 type='radio'
-                            //                                 id={optionId}
-                            //                                 name={optionId}
-                            //                                 checked={answers[item.id] === option.value}
-                            //                                 onChange={() => handleAnswers(item.id, option.value)}
-                            //                                 value={option.value}
-                            //                                 aria-label={option.value}
-                            //                             />
-                            //                             <label className='mobile_label multi_label' htmlFor={optionId}>{option.label[language]}</label>
-                            //                         </div>
-                            //                     )
-                            //                 }
-                            //                 )
-                            //             }
-                            //         </div>
-                            //     </div >
-                            // </ Fragment>
+                                                : <></>
+                                        }
+                                    </div>
+                                    <div className="choice_input" key={item.id} >
+                                        {
+                                            currentSection[0].options.map(option => {
+                                                const optionId = `${item.id}-${option.value}`
+                                                return (
+                                                    <div className="inputDiv" key={optionId}>
+                                                        <Radio
+                                                            key={optionId}
+                                                            type='radio'
+                                                            id={optionId}
+                                                            name={optionId}
+                                                            checked={answers[item.id] === option.value}
+                                                            onChange={() => handleAnswers(item.id, option.value)}
+                                                            value={option.value}
+                                                            aria-label={option.value}
+                                                        />
+                                                        <label className='mobile_label multi_label' htmlFor={optionId}>{option.label[language]}</label>
+                                                    </div>
+                                                )
+                                            }
+                                            )
+                                        }
+                                    </div>
+                                </div >
+                            </ Fragment>
                         )
                     }
                     )

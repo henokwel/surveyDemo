@@ -1,4 +1,3 @@
-// Backup
 import './App.css'
 import { useState, useMemo } from 'react'
 import type { AnswerChangeHandler, LanguageType, SurveyAnswers, SurveyQuestion } from "./types/survey";
@@ -13,17 +12,14 @@ function App() {
   const [currentSectionIndex, setcurrentSectionIndex] = useState(0)
   const [skippedQuestion, setSkippedQuestion] = useState(false)
   const [answers, setAnswers] = useState<SurveyAnswers>({})
-  // const [answerCheck, setAnswerCheck] = useState([])
   const [isSurveyComplete, setEndOfSurvey] = useState(false)
   const [language, setLanguage] = useState<LanguageType>("sv")
   const [improvedUI, setImprovedUI] = useState(false)
 
 
-
   const handleLangChange = (newLang: LanguageType) => {
     setLanguage(newLang)
   }
-
 
   const questionsBySection = useMemo(() => {
     return surveyQuestions_0.reduce((acc, question) => {
@@ -60,7 +56,7 @@ function App() {
       if (isLastSection) {
 
         setEndOfSurvey(true)
-        window.location.href = "https://www.origogroup.com"
+        return
       }
       setcurrentSectionIndex(index => index + 1)
 
@@ -142,7 +138,6 @@ function App() {
                   disabled={isFirstSection}
                   onClick={() => handleSectionNavigation("Back")}>Back</button>
                 <button
-                  // disabled={isLastSection}
                   onClick={() => handleSectionNavigation("Next")}>Next</button>
               </div>
             </div>
@@ -156,7 +151,6 @@ function App() {
         </>
         :
         <div className='ending'>
-          {/* <h1>The End</h1> */}
           <button onClick={() => window.location.reload()}>Restart</button>
         </div>
       }

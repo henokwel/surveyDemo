@@ -10,8 +10,7 @@ type QuestionHelpType = {
 
 function QuestionHelp({ helpText, language }: QuestionHelpType) {
   const [isOpen, setIsOpen] = useState(false)
-  console.log("QuestionHelp");
-
+ 
 
   if (!helpText) return null
 

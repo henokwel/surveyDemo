@@ -1,4 +1,4 @@
- import { useState } from "react"
+import { useState } from "react"
 import "./LangDropDown.css"
 
 export type Language =
@@ -44,6 +44,7 @@ export default function LanguageDropdown({
                         }`}
                     onClick={() => toggleMenu("sv")}
                     aria-expanded={openMenu === "sv"}
+                    aria-label="Välj svenska"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                         <rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#2e69a4"></rect>
@@ -60,6 +61,9 @@ export default function LanguageDropdown({
                                 language === "sv" ? "selected" : ""
                             }
                             onClick={() => handleLanguage("sv")}
+                            aria-label="Välj svenska"
+
+
                         >
                             Svenska
                         </button>
@@ -70,6 +74,8 @@ export default function LanguageDropdown({
                                 language === "sv_easy" ? "selected" : ""
                             }
                             onClick={() => handleLanguage("sv_easy")}
+                                                aria-label="Välj Lätt Svenska"
+
                         >
                             Lätt svenska
                         </button>
@@ -84,6 +90,7 @@ export default function LanguageDropdown({
                         }`}
                     onClick={() => toggleMenu("en")}
                     aria-expanded={openMenu === "en"}
+                    aria-label="Select English"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                         <rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#071b65"></rect>
@@ -110,6 +117,7 @@ export default function LanguageDropdown({
                                 language === "en" ? "selected" : ""
                             }
                             onClick={() => handleLanguage("en")}
+                            aria-label="Select English"
                         >
                             English
                         </button>
@@ -120,6 +128,7 @@ export default function LanguageDropdown({
                                 language === "en_easy" ? "selected" : ""
                             }
                             onClick={() => handleLanguage("en_easy")}
+                            aria-label="Select Easy English"
                         >
                             Easy English
                         </button>

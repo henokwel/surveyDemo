@@ -1,9 +1,6 @@
 import "./radio.css"
-
-
 export default function Radio({ className = "", ...props }) {
-    // console.log(props);
-    return (
+     return (
         <input
             {...props}
             type="radio"
