@@ -1,7 +1,14 @@
 import { useState } from "react"
 import "./QuestionHelp.css"
+import type { LanguageType } from "../types/survey"
 
-function QuestionHelp({ helpText, language }) {
+
+type QuestionHelpType = {
+  helpText: string
+  language: LanguageType
+}
+
+function QuestionHelp({ helpText, language }: QuestionHelpType) {
   const [isOpen, setIsOpen] = useState(false)
   console.log("QuestionHelp");
 
@@ -27,14 +34,7 @@ function QuestionHelp({ helpText, language }) {
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
-        <span className="questionHelp_icon">
-
-          i
-          {/* <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
-            <g fill="#045a3a" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" ><g transform="scale(10.66667,10.66667)"><path d="M12,2c-5.511,0 -10,4.489 -10,10c0,5.511 4.489,10 10,10c5.511,0 10,-4.489 10,-10c0,-5.511 -4.489,-10 -10,-10zM12,4c4.43012,0 8,3.56988 8,8c0,4.43012 -3.56988,8 -8,8c-4.43012,0 -8,-3.56988 -8,-8c0,-4.43012 3.56988,-8 8,-8zM11,7v2h2v-2zM11,11v6h2v-6z"></path></g></g>
-          </svg> */}
-
-        </span>
+        <span className="questionHelp_icon">i</span>
 
         {isOpen ? closeLabel : openLabel}
       </button>

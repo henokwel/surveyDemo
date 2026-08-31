@@ -34,6 +34,10 @@
 }
 
 .question_card {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
   border-bottom: 5px solid #e4e4e4;
 }
 
@@ -136,6 +140,10 @@ input[type="radio"] {
 /* Add bottom line for multi on mobile view and add even background grey */
 
 .choice_item {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
   border-bottom: 1px solid #e4e4e4;
 }
 
@@ -144,9 +152,11 @@ input[type="radio"] {
   /* border-bottom: 1px solid #e4e4e4; */
 }
 .choice_item:nth-child(even) {
-  /* background: #f3f3f3; */
   background: #f8f9f8;
 }
+/* .choice_item:nth-child(even) {
+  background: #f8f9f8;
+} */
 
 .choices_container:nth-last-child(-n + 1) {
   border-bottom: none;
@@ -179,6 +189,16 @@ input[type="radio"] {
   width: fit-content;
   font-size: 14px;
 }
+
+.choice_label {
+  /* background: green; */
+  width: stretch;
+  /* width: 100%; */
+}
+
+.choices_container > .choice_item:nth-child(even) > .choice_label {
+  background: #f8f9f8;
+}
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 768px) {
   .app {
@@ -193,7 +213,10 @@ input[type="radio"] {
   .container {
     min-width: 650px;
   }
-
+  .choice_label {
+    /* background: green; */
+    width: stretch;
+  }
   .survery_endMsg {
     width: 65ch;
     font-size: 15px;
@@ -267,13 +290,43 @@ input[type="radio"] {
     display: none;
   }
 
-  .choice_item {
+  /* .choice_item {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     min-height: 60px;
-    /* margin-top: 15px; */
-    font-weight: 600;
+     font-weight: 600;
     border-bottom: 1px solid #bebebe;
+  } */
+
+  .choice_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    min-width: 0;
+    min-inline-size: 0;
+    min-height: 60px;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-weight: 600;
+
+    border: 0;
+    border-bottom: 1px solid #bebebe;
+  }
+  .choice_item > .choice_label {
+    float: left;
+
+    flex: 1 1 auto;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0 20px 0 0;
   }
 
   .choice_input div {
@@ -318,7 +371,10 @@ input[type="radio"] {
     width: 95px;
     text-wrap: wrap;
   }
-
+  .choice_label {
+    background: unset;
+    width: stretch;
+  }
   .survery_endMsg {
     width: 65ch;
     font-size: 15px;

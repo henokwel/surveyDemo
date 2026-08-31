@@ -1,57 +1,119 @@
+import type { QuestionCardProps } from "../types/survey"
 import Radio from "./Checkbox"
 import QuestionHelp from "./QuestionHelp"
 
-function SingleQuestionCard({ questionsBySection, currentSectionIndex, language, handleAnswers, answers, improvedUI }) {
 
-    // const sectionTitles = Object.keys(questionsBySection)
-    const paginationArr_ = Object.values(questionsBySection)
 
-    const itemID = paginationArr_[currentSectionIndex][0].id
-    const question = paginationArr_[currentSectionIndex][0].question
-    const helperText = paginationArr_[currentSectionIndex][0]?.helpText
-    console.log(question);
-// Demo
+
+function SingleQuestionCard({ questionsBySection, currentSectionIndex, language, handleAnswers, answers, improvedUI }: QuestionCardProps) {
+
+
+    const sectionGroups = Object.values(questionsBySection)
+    const currentQuestion =
+        sectionGroups[currentSectionIndex]?.[0]
+
+    if (!currentQuestion) {
+        return null
+    }
+
+    const itemID = currentQuestion.id
+    const question = currentQuestion.question
+    const helperText = currentQuestion?.helpText
+
 
     return (
-        <div className='question_card'>
+        // <div className='question_card'>
+        //     <div className='question_container'>
+        //         <p>{question[language]}</p>
+        //         {
+        //             improvedUI && helperText ?
+        //                 <QuestionHelp
+        //                     language={language}
+        //                     helpText={helperText[language]}
+        //                 />
+        //                 : <></>
+        //         }
+        //     </div>
+        //     {
+        //         sectionGroups[currentSectionIndex][0].options.map(option => {
 
-            <div className='question_container'>
-                <p>{question[language]}</p>
+        //             const optionId = `${itemID}-${option.value}`
 
-                {
-                    improvedUI ?
-                        <QuestionHelp
-                            language={language}
-                            helpText={helperText[language]}
-                        />
-                        : <></>
-                }
-            </div>
+        //             return (
+        //                 <div className="option_container singleQView" key={optionId}>
+        //                     <div className="inputDiv inputDiv_singleQView">
+        //                         <Radio
+        //                             key={itemID}
+        //                             type='radio'
+        //                             id={optionId}
+        //                             name={itemID}
+        //                             checked={answers[itemID] === option.value}
+        //                             onChange={() => handleAnswers(itemID, option.value)}
+        //                             value={option.value}
+        //                             aria-label={option.value}
+        //                         />
+        //                         <label className='mobile_label'
+        //                             htmlFor={optionId}>
+        //                             {option.label[language]}
+        //                         </label>
+        //                     </div>
+        //                 </div>
+        //             )
+        //         }
+        //         )
+        //     }
+
+        // </div>
+        <fieldset className="question_card">
+            <legend className="question_container">
+                {question[language]}
+            </legend>
+
+            {improvedUI && helperText && (
+                <QuestionHelp
+                    language={language}
+                    helpText={helperText[language]}
+                />
+            )}
 
             {
-                paginationArr_[currentSectionIndex][0].options.map(item =>
-                    <div className="option_container singleQView" key={item.value}>
-                        <div className="inputDiv inputDiv_singleQView">
-                            <Radio
-                                key={item.value}
-                                type='radio'
-                                id={item.label[language]}
-                                name={itemID}
-                                checked={answers[itemID] === item.value}
-                                onChange={() => handleAnswers(itemID, item.value)}
-                                value={item.value}
-                                aria-label={item.value}
-                            />
-                            <label className='mobile_label'
-                                htmlFor={itemID}>
-                                {item.label[language]}
-                            </label>
-                        </div>
-                    </div>
-                )
-            }
+                currentQuestion.options.map(option => {
+                    const optionId =
+                        `${itemID}-${option.value}`
 
-        </div>
+                    return (
+                        <div
+                            className="option_container singleQView"
+                            key={optionId}
+                        >
+                            <div className="inputDiv inputDiv_singleQView">
+                                <Radio
+                                    type="radio"
+                                    id={optionId}
+                                    name={itemID}
+                                    value={option.value}
+                                    checked={
+                                        answers[itemID] === option.value
+                                    }
+                                    onChange={() =>
+                                        handleAnswers(
+                                            itemID,
+                                            option.value
+                                        )
+                                    }
+                                />
+
+                                <label
+                                    className="mobile_label"
+                                    htmlFor={optionId}
+                                >
+                                    {option.label[language]}
+                                </label>
+                            </div>
+                        </div>
+                    )
+                })}
+        </fieldset>
     )
 }
 

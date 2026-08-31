@@ -1,4 +1,13 @@
-export type LanguageType = "sv" | "sv_easy" | "en" | "en_easy";
+import type { SurveyOption, LanguageType, SurveyQuestion } from "./types/survey";
+
+
+export const languageOptions: { value: LanguageType; label: string }[] = [
+    { value: "sv", label: "Svenska" },
+    { value: "sv_easy", label: "Lätt svenska" },
+    { value: "en", label: "English" },
+    { value: "en_easy", label: "Easy English" },
+];
+
 
 export const paginationHint = {
     sv: "Besvara alla frågor för att gå vidare.",
@@ -7,37 +16,6 @@ export const paginationHint = {
     en_easy: "Answer every question. Then you can continue.",
 }
 
-type FinalMessageProps = {
-    message: string[]
-}
-export type LocalizedText = {
-    sv: string;
-    sv_easy: string;
-    en: string;
-    en_easy: string;
-};
-export type SurveyOption = {
-    value: string;
-    label: LocalizedText;
-    short_label: LocalizedText;
-    tooltip: LocalizedText;
-};
-export type SurveyQuestion = {
-    id: string;
-    section?: LocalizedText;
-    section_subTitle?: LocalizedText;
-    question: LocalizedText;
-    helpText?: LocalizedText;
-    required: boolean;
-    finalMsg?: FinalMessageProps;
-    options: SurveyOption[];
-};
-export const languageOptions: { value: LanguageType; label: string }[] = [
-    { value: "sv", label: "Svenska" },
-    { value: "sv_easy", label: "Lätt svenska" },
-    { value: "en", label: "English" },
-    { value: "en_easy", label: "Easy English" },
-];
 
 // ---------------------------------------
 // Reusable options

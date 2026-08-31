@@ -1,6 +1,12 @@
 import "./DemoToggle.css"
 
-function DemoToggle({ enabled, onChange }) {
+type DemoToggleType = {
+  enabled: boolean
+  onChange: (toggle: boolean) => void
+
+}
+
+function DemoToggle({ enabled, onChange }: DemoToggleType) {
   return (
     <div className="demoToggle">
       <div className="demoToggle_content">
@@ -10,9 +16,8 @@ function DemoToggle({ enabled, onChange }) {
 
         <button
           type="button"
-          className={`demoToggle_switch ${
-            enabled ? "active" : ""
-          }`}
+          className={`demoToggle_switch ${enabled ? "active" : ""
+            }`}
           onClick={() => onChange(!enabled)}
           aria-pressed={enabled}
         >
