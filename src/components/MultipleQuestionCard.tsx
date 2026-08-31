@@ -2,7 +2,7 @@ import Radio from "./Checkbox"
 import QuestionHelp from "./QuestionHelp";
 
 
-export const MultipleQ_Card = ({ questionsBySection, currentSectionIndex, language, handleAnswers, answers, improvedUI }) => {
+export const MultipleQuestionCard = ({ questionsBySection, currentSectionIndex, language, handleAnswers, answers, improvedUI }) => {
     const sectionTitles = Object.keys(questionsBySection)
     const paginationArr_ = Object.values(questionsBySection)
     console.log(sectionTitles);

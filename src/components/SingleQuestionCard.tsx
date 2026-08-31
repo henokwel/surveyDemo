@@ -1,7 +1,7 @@
 import Radio from "./Checkbox"
 import QuestionHelp from "./QuestionHelp"
 
-function SingleQ_Card({ questionsBySection, currentSectionIndex, language, handleAnswers, answers, improvedUI }) {
+function SingleQuestionCard({ questionsBySection, currentSectionIndex, language, handleAnswers, answers, improvedUI }) {
 
     // const sectionTitles = Object.keys(questionsBySection)
     const paginationArr_ = Object.values(questionsBySection)
@@ -55,4 +55,4 @@ function SingleQ_Card({ questionsBySection, currentSectionIndex, language, handl
     )
 }
 
-export default SingleQ_Card
+export default SingleQuestionCard

@@ -1,12 +1,12 @@
 // Backup
 import './App.css'
 import { useState, useEffect, useMemo } from 'react'
-import { MultipleQ_Card } from './components/MultipleQ_Card'
 import { surveyQuestions_0, type LanguageType, paginationHint, type SurveyQuestion } from './Q3'
-import SingleQ_Card from './components/SingleQ_Card'
+import SingleQuestionCard from './components/SingleQuestionCard'
 import LanguageDropdown from './components/LangDropDown'
 import DemoToggle from './components/DemoToggle'
 import { FinalMessage } from './components/FinalMessage'
+import { MultipleQuestionCard } from './components/MultipleQuestionCard'
 
 function App() {
   const [currentSectionIndex, setcurrentSectionIndex] = useState(0)
@@ -132,7 +132,7 @@ function App() {
             }
             {
               !currentQuestionType ?
-                <SingleQ_Card
+                <SingleQuestionCard
                   questionsBySection={questionsBySection}
                   currentSectionIndex={currentSectionIndex}
                   language={language}
@@ -141,7 +141,7 @@ function App() {
                   improvedUI={improvedUI}
 
                 /> :
-                <MultipleQ_Card
+                <MultipleQuestionCard
                   questionsBySection={questionsBySection}
                   currentSectionIndex={currentSectionIndex}
                   language={language}
