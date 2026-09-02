@@ -151,7 +151,7 @@ function App() {
         </>
         :
         <div className='ending'>
-          <button onClick={() => window.location.reload()}>Restart</button>
+          <button onClick={() => window.location.reload()}>{isSwedish ? "Starta om" : "Restart"}</button>
         </div>
       }
 

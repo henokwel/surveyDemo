@@ -80,8 +80,8 @@ describe("Survey", () => {
     render(<App />)
 
     await user.click(screen.getByRole("radio", { name: "Ja" }))
-    await user.click(screen.getByRole("button", { name: "Next" }))
-    await user.click(screen.getByRole("button", { name: "Back" }))
+    await user.click(screen.getByRole("button", { name: "Nästa" }))
+    await user.click(screen.getByRole("button", { name: "Bakåt" }))
 
     expect(screen.getByRole("radio", { name: "Ja" })).toBeChecked()
   })
@@ -90,7 +90,7 @@ describe("Survey", () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.click(screen.getByRole("button", { name: "Next" }))
+    await user.click(screen.getByRole("button", { name: "Nästa" }))
 
     expect(
       screen.getByText("Svara på frågan innan du fortsätter."),
@@ -122,9 +122,9 @@ describe("Survey", () => {
     render(<App />)
 
     await user.click(screen.getByRole("radio", { name: "Ja" }))
-    await user.click(screen.getByRole("button", { name: "Next" }))
+    await user.click(screen.getByRole("button", { name: "Nästa" }))
     await user.click(screen.getByRole("radio", { name: "Ja" }))
-    await user.click(screen.getByRole("button", { name: "Next" }))
+    await user.click(screen.getByRole("button", { name: "Nästa" }))
 
     expect(screen.getByRole("button", { name: "Restart" })).toBeInTheDocument()
   })

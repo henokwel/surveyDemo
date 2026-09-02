@@ -46,11 +46,3 @@ Improve the survey’s readability, accessibility, and ease of use while keeping
 npm install
 npm run dev
 ```
-
-## Quality checks
-
-```bash
-npm run test
-npm run lint
-npm run build
-```
