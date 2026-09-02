@@ -1,29 +1,56 @@
-# Demo for O 
+# Survey UI Improvement Demo
+
+A React and TypeScript prototype exploring how an existing survey can be made clearer and more inclusive without changing its core layout or survey flow.
+
+## Live demo
+
+[Open the live demo](https://origo-demoapp.vercel.app/)
+
+Use the **Improved UI** toggle below the survey card to compare the current and proposed interfaces.
 
 ## Goal
 
-Improve the existing survey UI without changing the core layout or survey flow.
+Improve the survey’s readability, accessibility, and ease of use while keeping its familiar structure and navigation.
 
-### Improvements
+## Current and proposed UI
 
-- Improve the current UI with better typography, spacing, visual hierarchy, and more modern form controls.
+![Comparison of the current and proposed survey interfaces](./docs/images/survey-comparison.png)
 
-- Allow users to switch language at any point during the survey without losing their progress.
+## Key improvements
 
-- Add simplified language versions for both Swedish and English:
-  - Lätt svenska
-  - Easy English
+* Improved typography, spacing, and visual hierarchy to make questions and answer choices easier to read.
 
-  These versions use clearer and simpler wording to make the survey easier to understand for non-native speakers and the general public.
+* Language switching at any point without losing previously selected answers. This helps users stay focused instead of leaving the survey to translate unfamiliar words.
 
-- Add optional explainer text to each question.
+* Plain-language versions in Swedish and English:
 
-  The explainer provides additional context about what the question means without making the main question longer. This improves clarity and accessibility, especially for questions that may be difficult to interpret.
+  * Lätt svenska
+  * Easy English
 
-## Demo
+  These versions use clearer wording to help non-native speakers and anyone who may find the original questions difficult to understand. Support for additional languages can be added later.
 
-There is a hidden **Improved UI** toggle directly below the survey card, underneath the navigation buttons, [Back] [Next].
+* Optional explanations for individual questions. These provide additional context about a question’s meaning and scope without making the main question longer.
 
-Hover over that area to reveal the toggle.
+* Accessible radio groups with associated labels and keyboard support.
 
-Use it to switch between the original UI and the improved version and compare the changes directly.
+## Built with
+
+* React
+* TypeScript
+* Vite
+* Vitest and React Testing Library
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Quality checks
+
+```bash
+npm run test
+npm run lint
+npm run build
+```

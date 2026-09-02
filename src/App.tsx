@@ -80,7 +80,7 @@ function App() {
 
   const finalMsg = currentSection?.at(-1)?.finalMsg
 
-
+  const isSwedish = language.startsWith("sv")
 
   return (
     <div className='app'>
@@ -133,12 +133,12 @@ function App() {
               )}
               {/* <FinalMessage message={finalMsg[language]} /> */}
               <div>
-
+                {/* "sv" | "sv_easy" | "en" | "en_easy" */}
                 <button
                   disabled={isFirstSection}
-                  onClick={() => handleSectionNavigation("Back")}>Back</button>
+                  onClick={() => handleSectionNavigation("Back")}>{isSwedish ? "Bakåt" : "Back"}</button>
                 <button
-                  onClick={() => handleSectionNavigation("Next")}>Next</button>
+                  onClick={() => handleSectionNavigation("Next")}>{isSwedish ? "Nästa" : "Next"}</button>
               </div>
             </div>
           </div>

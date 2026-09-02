@@ -1,5 +1,5 @@
 import type { QuestionCardProps } from "../types/survey"
-import Radio from "./Checkbox"
+import Radio from "./Radio"
 import QuestionHelp from "./QuestionHelp"
 
 

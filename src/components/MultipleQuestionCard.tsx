@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef } from "react";
 import type { QuestionCardProps } from "../types/survey";
-import Radio from "./Checkbox"
+import Radio from "./Radio"
 import QuestionHelp from "./QuestionHelp";
 
 export const MultipleQuestionCard = ({ questionsBySection, currentSectionIndex, language, handleAnswers, answers, improvedUI }: QuestionCardProps) => {

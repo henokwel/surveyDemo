@@ -11,7 +11,7 @@
 }
 
 .custom-radio:checked {
-  border-color: #00965e;
+  border-color: #03854b;
 }
 
 .custom-radio:not(:checked):hover {
