@@ -119,15 +119,15 @@ function App() {
                 />
             }
 
-            <div className='navigation-hint'>
-              {
-                skippedQuestion ? <p>{paginationHint[language]}</p> : <></>
-              }
-            </div>
 
 
 
             <div className='pagination_container'>
+              <div className='navigation-hint'>
+                {
+                  skippedQuestion ? <p>{paginationHint[language]}</p> : <></>
+                }
+              </div>
               {finalMsg && (
                 <FinalMessage message={finalMsg[language]} />
               )}

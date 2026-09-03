@@ -139,10 +139,11 @@ input[type="radio"] {
 /* Navigation and survey messages */
 
 .navigation-hint {
-  padding-top: 10px;
+  /* padding-top: 10px; */
   color: #054120;
   font-size: 14px;
   text-align: center;
+  /* padding: 5px 0px 5px; */
 }
 
 .navigation-hint p {
@@ -317,7 +318,7 @@ input[type="radio"] {
     margin: 0;
     padding: 0 40px 30px;
     background: white;
-    border-top: 5px solid #e4e4e4;
+    border-top: 1px solid #bebebe;
     border-radius: 0 0 5px 5px;
   }
 }

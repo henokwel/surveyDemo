@@ -482,6 +482,114 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         required: true,
         options: residentialOptions
     },
+    // Worries about being the victim of crime
+    {
+        id: "safety-evening",
+        section: {
+            sv: "Oro för att utsättas för brott",
+            sv_easy: "Oro för brott",
+            en: "Worries about being the victim of crime", en_easy: "Worry about crime"
+        },
+        section_subTitle: {
+            sv: "Har det under de senaste 12 månaderna hänt ...",
+            sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
+            en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
+        },
+        question: {
+            sv: "Att du oroat dig för att bli utsatt för inbrott i den egna bostaden?",
+            sv_easy: "Att du varit orolig för inbrott i ditt hem?",
+            en: "That you have worried about being the victim of burglary in your own home?", en_easy: "Worried that someone might break into your home?"
+        },
+        helpText: {
+            sv: "Frågan gäller hur ofta du har känt oro för inbrott i din bostad under de senaste 12 månaderna, inte om ett inbrott faktiskt har skett.",
+            sv_easy: "Tänk på hur ofta du har varit orolig för att någon ska göra inbrott i ditt hem. Det behöver inte ha hänt ett inbrott.",
+            en: "This question is about how often you have worried about burglary in your home during the last 12 months, not whether a burglary actually occurred.",
+            en_easy: "Think about how often you worried that someone might break into your home. A burglary does not need to have happened."
+        },
+        required: true,
+        options: safetyOptions
+    },
+    {
+        id: "safety-daytime",
+        section: {
+            sv: "Oro för att utsättas för brott",
+            sv_easy: "Oro för brott",
+            en: "Worries about being the victim of crime", en_easy: "Worry about crime"
+        },
+        section_subTitle: {
+            sv: "Har det under de senaste 12 månaderna hänt ...",
+            sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
+            en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
+        },
+        question: {
+            sv: "Att du oroat dig för att bli utsatt för inbrott i förråd, källare, vindsutrymme eller garage?",
+            sv_easy: "Att du varit orolig för inbrott i ditt förråd, din källare, vind eller garage?",
+            en: "That you have worried about being the victim of burglary in your storage unit, basement, attic or garage?",
+            en_easy: "Worried that someone might break into your storage room, basement, attic or garage?"
+        },
+        helpText: {
+            sv: "Frågan gäller hur ofta du har känt oro för inbrott i förråd, källare, vindsutrymme eller garage under de senaste 12 månaderna.",
+            sv_easy: "Tänk på hur ofta du har varit orolig för inbrott i förråd, källare, vind eller garage.",
+            en: "This question is about how often you have worried about burglary in a storage unit, basement, attic or garage during the last 12 months.",
+            en_easy: "Think about how often you worried that someone might break into your storage room, basement, attic or garage."
+        },
+        required: true,
+        options: safetyOptions
+    },
+    {
+        id: "safety-garage",
+        section: {
+            sv: "Oro för att utsättas för brott",
+            sv_easy: "Oro för brott",
+            en: "Worries about being the victim of crime", en_easy: "Worry about crime"
+        },
+        section_subTitle: {
+            sv: "Har det under de senaste 12 månaderna hänt ...",
+            sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
+            en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
+        },
+        question: {
+            sv: "Att du oroat dig för att din bil, motorcykel, moped eller cykel ska utsättas för stöld eller skadegörelse om den är parkerad i området där du bor?",
+            sv_easy: "Att du varit orolig för att någon ska stjäla eller skada din bil, motorcykel, moped eller cykel där du bor?",
+            en: "That you have worried that your car, motorcycle, moped or bicycle will be subjected to theft or vandalism if it is parked in the area where you live?",
+            en_easy: "Worried that your car, motorcycle, moped or bicycle might be stolen or damaged where you live?"
+        },
+        helpText: {
+            sv: "Frågan gäller hur ofta du har känt oro för att ditt fordon eller din cykel ska bli stulen eller skadad när den är parkerad där du bor.",
+            sv_easy: "Tänk på hur ofta du har varit orolig för att någon ska stjäla eller skada ditt fordon eller din cykel där du bor.",
+            en: "This question is about how often you have worried that your vehicle or bicycle might be stolen or damaged when parked where you live.",
+            en_easy: "Think about how often you worried that someone might steal or damage your vehicle or bicycle where you live."
+        },
+        required: true,
+        options: safetyOptions
+    },
+    {
+        id: "safety-assault",
+        section: {
+            sv: "Oro för att utsättas för brott",
+            sv_easy: "Oro för brott",
+            en: "Worries about being the victim of crime", en_easy: "Worry about crime"
+        },
+        section_subTitle: {
+            sv: "Har det under de senaste 12 månaderna hänt ...",
+            sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
+            en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
+        },
+        question: {
+            sv: "Att du oroat dig för att bli överfallen eller misshandlad i området där du bor?",
+            sv_easy: "Att du varit orolig för att någon ska överfalla eller slå dig där du bor?",
+            en: "That you have worried about being assaulted or physically abused in the area where you live?",
+            en_easy: "Worried that someone might attack or hurt you where you live?"
+        },
+        helpText: {
+            sv: "Frågan gäller hur ofta du har känt oro för att bli överfallen eller misshandlad i området där du bor under de senaste 12 månaderna.",
+            sv_easy: "Tänk på hur ofta du har varit orolig för att någon ska överfalla eller slå dig där du bor.",
+            en: "This question is about how often you have worried about being assaulted or physically abused in the area where you live during the last 12 months.",
+            en_easy: "Think about how often you worried that someone might attack or hurt you where you live."
+        },
+        required: true,
+        options: safetyOptions
+    },
     // Problems in the area
     {
         id: "problem-poor-lighting",
@@ -857,114 +965,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         required: true,
         options: occurrenceOptions
     },
-    // Worries about being the victim of crime
-    {
-        id: "safety-evening",
-        section: {
-            sv: "Oro för att utsättas för brott",
-            sv_easy: "Oro för brott",
-            en: "Worries about being the victim of crime", en_easy: "Worry about crime"
-        },
-        section_subTitle: {
-            sv: "Har det under de senaste 12 månaderna hänt ...",
-            sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
-            en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
-        },
-        question: {
-            sv: "Att du oroat dig för att bli utsatt för inbrott i den egna bostaden?",
-            sv_easy: "Att du varit orolig för inbrott i ditt hem?",
-            en: "That you have worried about being the victim of burglary in your own home?", en_easy: "Worried that someone might break into your home?"
-        },
-        helpText: {
-            sv: "Frågan gäller hur ofta du har känt oro för inbrott i din bostad under de senaste 12 månaderna, inte om ett inbrott faktiskt har skett.",
-            sv_easy: "Tänk på hur ofta du har varit orolig för att någon ska göra inbrott i ditt hem. Det behöver inte ha hänt ett inbrott.",
-            en: "This question is about how often you have worried about burglary in your home during the last 12 months, not whether a burglary actually occurred.",
-            en_easy: "Think about how often you worried that someone might break into your home. A burglary does not need to have happened."
-        },
-        required: true,
-        options: safetyOptions
-    },
-    {
-        id: "safety-daytime",
-        section: {
-            sv: "Oro för att utsättas för brott",
-            sv_easy: "Oro för brott",
-            en: "Worries about being the victim of crime", en_easy: "Worry about crime"
-        },
-        section_subTitle: {
-            sv: "Har det under de senaste 12 månaderna hänt ...",
-            sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
-            en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
-        },
-        question: {
-            sv: "Att du oroat dig för att bli utsatt för inbrott i förråd, källare, vindsutrymme eller garage?",
-            sv_easy: "Att du varit orolig för inbrott i ditt förråd, din källare, vind eller garage?",
-            en: "That you have worried about being the victim of burglary in your storage unit, basement, attic or garage?",
-            en_easy: "Worried that someone might break into your storage room, basement, attic or garage?"
-        },
-        helpText: {
-            sv: "Frågan gäller hur ofta du har känt oro för inbrott i förråd, källare, vindsutrymme eller garage under de senaste 12 månaderna.",
-            sv_easy: "Tänk på hur ofta du har varit orolig för inbrott i förråd, källare, vind eller garage.",
-            en: "This question is about how often you have worried about burglary in a storage unit, basement, attic or garage during the last 12 months.",
-            en_easy: "Think about how often you worried that someone might break into your storage room, basement, attic or garage."
-        },
-        required: true,
-        options: safetyOptions
-    },
-    {
-        id: "safety-garage",
-        section: {
-            sv: "Oro för att utsättas för brott",
-            sv_easy: "Oro för brott",
-            en: "Worries about being the victim of crime", en_easy: "Worry about crime"
-        },
-        section_subTitle: {
-            sv: "Har det under de senaste 12 månaderna hänt ...",
-            sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
-            en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
-        },
-        question: {
-            sv: "Att du oroat dig för att din bil, motorcykel, moped eller cykel ska utsättas för stöld eller skadegörelse om den är parkerad i området där du bor?",
-            sv_easy: "Att du varit orolig för att någon ska stjäla eller skada din bil, motorcykel, moped eller cykel där du bor?",
-            en: "That you have worried that your car, motorcycle, moped or bicycle will be subjected to theft or vandalism if it is parked in the area where you live?",
-            en_easy: "Worried that your car, motorcycle, moped or bicycle might be stolen or damaged where you live?"
-        },
-        helpText: {
-            sv: "Frågan gäller hur ofta du har känt oro för att ditt fordon eller din cykel ska bli stulen eller skadad när den är parkerad där du bor.",
-            sv_easy: "Tänk på hur ofta du har varit orolig för att någon ska stjäla eller skada ditt fordon eller din cykel där du bor.",
-            en: "This question is about how often you have worried that your vehicle or bicycle might be stolen or damaged when parked where you live.",
-            en_easy: "Think about how often you worried that someone might steal or damage your vehicle or bicycle where you live."
-        },
-        required: true,
-        options: safetyOptions
-    },
-    {
-        id: "safety-assault",
-        section: {
-            sv: "Oro för att utsättas för brott",
-            sv_easy: "Oro för brott",
-            en: "Worries about being the victim of crime", en_easy: "Worry about crime"
-        },
-        section_subTitle: {
-            sv: "Har det under de senaste 12 månaderna hänt ...",
-            sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
-            en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
-        },
-        question: {
-            sv: "Att du oroat dig för att bli överfallen eller misshandlad i området där du bor?",
-            sv_easy: "Att du varit orolig för att någon ska överfalla eller slå dig där du bor?",
-            en: "That you have worried about being assaulted or physically abused in the area where you live?",
-            en_easy: "Worried that someone might attack or hurt you where you live?"
-        },
-        helpText: {
-            sv: "Frågan gäller hur ofta du har känt oro för att bli överfallen eller misshandlad i området där du bor under de senaste 12 månaderna.",
-            sv_easy: "Tänk på hur ofta du har varit orolig för att någon ska överfalla eller slå dig där du bor.",
-            en: "This question is about how often you have worried about being assaulted or physically abused in the area where you live during the last 12 months.",
-            en_easy: "Think about how often you worried that someone might attack or hurt you where you live."
-        },
-        required: true,
-        options: safetyOptions
-    },
+
     // Final question
     {
         id: "about-yourself",
