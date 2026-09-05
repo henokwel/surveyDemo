@@ -1,4 +1,4 @@
-import type { SurveyOption, LanguageType, SurveyQuestion } from "./types/survey";
+import type { SurveyOption, LanguageType, SurveyQuestion } from "./model/survey.types";
 
 
 export const languageOptions: { value: LanguageType; label: string }[] = [
@@ -289,52 +289,7 @@ export const areaProblemOptions: SurveyOption[] = [
         }
     }
 ];
-// export const areaProblemOptions: SurveyOption[] = [
-//     {
-//         value: "no",
-//         label: { sv: "Nej", sv_easy: "Nej", en: "No", en_easy: "No" },
-//         short_label: { sv: "Nej", sv_easy: "Nej", en: "No", en_easy: "No" },
-//         tooltip: {
-//             sv: "Du upplever inte att detta förekommer.",
-//             sv_easy: "Detta finns inte där du bor.",
-//             en: "You do not feel that this occurs.", en_easy: "You do not see this where you live."
-//         }
-//     },
-//     {
-//         value: "some_degree",
-//         label: { sv: "Ja, i viss utsträckning", sv_easy: "Ja, lite", en: "Yes, to some degree", en_easy: "Yes, a little" },
-//         short_label: { sv: "I viss utsträckning", sv_easy: "I viss utsträckning", en: "Some degree", en_easy: "A little" },
-//         tooltip: {
-//             sv: "Det förekommer i viss utsträckning.",
-//             sv_easy: "Det finns lite av detta där du bor.",
-//             en: "It occurs to some degree.", en_easy: "It happens a little."
-//         }
-//     },
-//     {
-//         value: "large_degree",
-//         label: { sv: "Ja, i stor utsträckning", sv_easy: "Ja, mycket", en: "Yes, to a large degree", en_easy: "Yes, a lot" },
-//         short_label: { sv: "I stor utsträckning", sv_easy: "I stor utsträckning", en: "Large degree", en_easy: "A lot" },
-//         tooltip: {
-//             sv: "Det förekommer i stor utsträckning.",
-//             sv_easy: "Det finns mycket av detta där du bor.",
-//             en: "It occurs to a large degree.", en_easy: "It happens a lot."
-//         }
-//     },
-//     {
-//         value: "yes_not_problem",
-//         label: {
-//             sv: "Ja, men jag upplever det inte som ett problem",
-//             sv_easy: "Ja, men det stör mig inte",
-//             en: "Yes, but I don't consider it a problem", en_easy: "Yes, but it is not a problem for me"
-//         },
-//         short_label: { sv: "Ja, inget problem", sv_easy: "Ja, inget problem", en: "Yes, not a problem", en_easy: "Yes, not a problem" },
-//         tooltip: {
-//             sv: "Det förekommer, men du ser det inte som ett problem.",
-//             sv_easy: "Det finns, men du tycker inte att det är ett problem.",
-//             en: "It occurs, but you do not consider it a problem.", en_easy: "It happens, but it is not a problem for you."
-//         }
-//     },
-// ];
+
 export const residentialOptions: SurveyOption[] = [
     {
         value: "no",
@@ -466,7 +421,7 @@ export const householdOptions: SurveyOption[] = [
 // ---------------------------------------
 // Questions
 // ---------------------------------------
-export const surveyQuestions_0: SurveyQuestion[] = [
+export const surveyQuestions: SurveyQuestion[] = [
     {
         id: "current-residential",
         question: {
@@ -490,7 +445,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv_easy: "Oro för brott",
             en: "Worries about being the victim of crime", en_easy: "Worry about crime"
         },
-        section_subTitle: {
+        description: {
             sv: "Har det under de senaste 12 månaderna hänt ...",
             sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
             en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
@@ -516,7 +471,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv_easy: "Oro för brott",
             en: "Worries about being the victim of crime", en_easy: "Worry about crime"
         },
-        section_subTitle: {
+        description: {
             sv: "Har det under de senaste 12 månaderna hänt ...",
             sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
             en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
@@ -543,7 +498,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv_easy: "Oro för brott",
             en: "Worries about being the victim of crime", en_easy: "Worry about crime"
         },
-        section_subTitle: {
+        description: {
             sv: "Har det under de senaste 12 månaderna hänt ...",
             sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
             en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
@@ -570,7 +525,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv_easy: "Oro för brott",
             en: "Worries about being the victim of crime", en_easy: "Worry about crime"
         },
-        section_subTitle: {
+        description: {
             sv: "Har det under de senaste 12 månaderna hänt ...",
             sv_easy: "Har detta hänt under de senaste 12 månaderna ...",
             en: "During the last 12 months, has it occurred...", en_easy: "In the last 12 months, have you..."
@@ -598,7 +553,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv_easy: "Problem där du bor",
             en: "Problems in the area where you live", en_easy: "Problems where you live"
         },
-        section_subTitle: {
+        description: {
             sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
             sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
             en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
@@ -620,7 +575,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv_easy: "Problem där du bor",
             en: "Problems in the area where you live", en_easy: "Problems where you live"
         },
-        section_subTitle: {
+        description: {
             sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
             sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
             en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
@@ -642,7 +597,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv_easy: "Problem där du bor",
             en: "Problems in the area where you live", en_easy: "Problems where you live"
         },
-        section_subTitle: {
+        description: {
             sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
             sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
             en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
@@ -664,7 +619,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv_easy: "Problem där du bor",
             en: "Problems in the area where you live", en_easy: "Problems where you live"
         },
-        section_subTitle: {
+        description: {
             sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
             sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
             en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
@@ -686,7 +641,7 @@ export const surveyQuestions_0: SurveyQuestion[] = [
             sv_easy: "Problem där du bor",
             en: "Problems in the area where you live", en_easy: "Problems where you live"
         },
-        section_subTitle: {
+        description: {
             sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
             sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
             en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
@@ -705,228 +660,6 @@ export const surveyQuestions_0: SurveyQuestion[] = [
         required: true,
         options: areaProblemOptions
     },
-    // {
-    //     id: "problem-mopeds-paths",
-    //     section: {
-    //         sv: "Problem i området där du bor",
-    //         sv_easy: "Problem där du bor",
-    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
-    //     },
-    //     section_subTitle: {
-    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-    //     },
-    //     question: {
-    //         sv: "Mopeder eller motorcyklar på gång- eller cykelvägar",
-    //         sv_easy: "Mopeder eller motorcyklar på gångvägar eller cykelvägar",
-    //         en: "Mopeds or motorbikes on footpaths or bicycle paths", en_easy: "Mopeds or motorbikes on walking or bicycle paths"
-    //     },
-    //     helpText: {
-    //         sv: "Frågan gäller mopeder eller motorcyklar som körs på vägar som främst är avsedda för gående eller cyklister.",
-    //         sv_easy: "Det betyder mopeder eller motorcyklar som kör där människor går eller cyklar.",
-    //         en: "This refers to mopeds or motorbikes being driven on paths mainly intended for pedestrians or cyclists.",
-    //         en_easy: "This means mopeds or motorbikes being driven where people walk or cycle."
-    //     },
-    //     required: true,
-    //     options: areaProblemOptions
-    // },
-    // {
-    //     id: "problem-cars-paths",
-    //     section: {
-    //         sv: "Problem i området där du bor",
-    //         sv_easy: "Problem där du bor",
-    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
-    //     },
-    //     section_subTitle: {
-    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-    //     },
-    //     question: {
-    //         sv: "Bilar på gång- eller cykelvägar",
-    //         sv_easy: "Bilar på gångvägar eller cykelvägar",
-    //         en: "Cars on footpaths or bicycle paths", en_easy: "Cars on walking or bicycle paths"
-    //     },
-    //     helpText: {
-    //         sv: "Frågan gäller bilar som körs på vägar som främst är avsedda för gående eller cyklister.",
-    //         sv_easy: "Det betyder bilar som kör där människor går eller cyklar.",
-    //         en: "This refers to cars being driven on paths mainly intended for pedestrians or cyclists.",
-    //         en_easy: "This means cars being driven where people walk or cycle."
-    //     },
-    //     required: true,
-    //     options: areaProblemOptions
-    // },
-    // {
-    //     id: "problem-rowdy-neighbours",
-    //     section: {
-    //         sv: "Problem i området där du bor",
-    //         sv_easy: "Problem där du bor",
-    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
-    //     },
-    //     section_subTitle: {
-    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-    //     },
-    //     question: { sv: "Stökiga grannar", sv_easy: "Grannar som stör", en: "Rowdy neighbours", en_easy: "Neighbours who cause problems" },
-    //     helpText: {
-    //         sv: "Med stökiga grannar menas grannar som stör genom till exempel högt ljud, bråk eller annat stök.",
-    //         sv_easy: "Det betyder grannar som stör, till exempel genom högt ljud eller bråk.",
-    //         en: "Rowdy neighbours means neighbours who disturb others, for example through loud noise, arguments or other disruptive behaviour.",
-    //         en_easy: "This means neighbours who disturb others, for example with loud noise or arguments."
-    //     },
-    //     required: true,
-    //     options: areaProblemOptions
-    // },
-    // {
-    //     id: "problem-drunk-people",
-    //     section: {
-    //         sv: "Problem i området där du bor",
-    //         sv_easy: "Problem där du bor",
-    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
-    //     },
-    //     section_subTitle: {
-    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-    //     },
-    //     question: {
-    //         sv: "Berusade personer som stör",
-    //         sv_easy: "Fulla personer som stör",
-    //         en: "Drunk people who cause a nuisance", en_easy: "Drunk people who disturb others"
-    //     },
-    //     helpText: {
-    //         sv: "Frågan gäller berusade personer som genom sitt beteende stör andra på allmän plats.",
-    //         sv_easy: "Det betyder fulla personer som stör andra ute på allmänna platser.",
-    //         en: "This refers to drunk people whose behaviour disturbs others in public places.",
-    //         en_easy: "This means drunk people who disturb others in public places."
-    //     },
-    //     required: true,
-    //     options: areaProblemOptions
-    // },
-    // {
-    //     id: "problem-drug-residences",
-    //     section: {
-    //         sv: "Problem i området där du bor",
-    //         sv_easy: "Problem där du bor",
-    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
-    //     },
-    //     section_subTitle: {
-    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-    //     },
-    //     question: {
-    //         sv: "Bostäder där personer som använder narkotika ofta vistas",
-    //         sv_easy: "Bostäder där personer som använder droger ofta är",
-    //         en: "Residences frequently visited by drug users", en_easy: "Homes where people often use drugs"
-    //     },
-    //     helpText: {
-    //         sv: "Med detta menas bostäder där personer som använder narkotika ofta kommer eller vistas.",
-    //         sv_easy: "Det betyder bostäder där personer som använder droger ofta är eller kommer på besök.",
-    //         en: "This means homes where people who use drugs frequently visit or spend time.",
-    //         en_easy: "This means homes where people who use drugs often visit or stay."
-    //     },
-    //     required: true,
-    //     options: areaProblemOptions
-    // },
-    // {
-    //     id: "problem-drug-users-public",
-    //     section: {
-    //         sv: "Problem i området där du bor",
-    //         sv_easy: "Problem där du bor",
-    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
-    //     },
-    //     section_subTitle: {
-    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-    //     },
-    //     question: {
-    //         sv: "Personer som använder narkotika och stör på allmän plats",
-    //         sv_easy: "Personer som använder droger och stör på allmän plats",
-    //         en: "Drug users who cause a nuisance in public areas", en_easy: "People using drugs and disturbing others in public places"
-    //     },
-    //     helpText: {
-    //         sv: "Frågan gäller personer som använder narkotika på allmän plats och samtidigt stör människor i närheten.",
-    //         sv_easy: "Det betyder personer som använder droger ute och stör andra människor.",
-    //         en: "This refers to people using drugs in public places and disturbing people nearby.",
-    //         en_easy: "This means people using drugs in public and disturbing other people."
-    //     },
-    //     required: true,
-    //     options: areaProblemOptions
-    // },
-    // {
-    //     id: "problem-open-drug-selling",
-    //     section: {
-    //         sv: "Problem i området där du bor",
-    //         sv_easy: "Problem där du bor",
-    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
-    //     },
-    //     section_subTitle: {
-    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-    //     },
-    //     question: { sv: "Öppen narkotikaförsäljning", sv_easy: "Personer som säljer droger öppet", en: "Selling drugs out in the open", en_easy: "People selling drugs openly" },
-    //     helpText: {
-    //         sv: "Med öppen narkotikaförsäljning menas försäljning av narkotika som sker synligt på allmän plats.",
-    //         sv_easy: "Det betyder att personer säljer droger öppet ute där andra kan se det.",
-    //         en: "Open drug selling means drugs being sold visibly in public places.",
-    //         en_easy: "This means people selling drugs openly where other people can see it."
-    //     },
-    //     required: true,
-    //     options: areaProblemOptions
-    // },
-    // {
-    //     id: "problem-fighting-outside",
-    //     section: {
-    //         sv: "Problem i området där du bor",
-    //         sv_easy: "Problem där du bor",
-    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
-    //     },
-    //     section_subTitle: {
-    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-    //     },
-    //     question: {
-    //         sv: "Personer som bråkar och slåss utomhus",
-    //         sv_easy: "Personer som bråkar eller slåss utomhus",
-    //         en: "People who argue and fight outside", en_easy: "People arguing or fighting outside"
-    //     },
-    //     helpText: {
-    //         sv: "Frågan gäller personer som grälar eller slåss utomhus på platser där andra människor kan vistas.",
-    //         sv_easy: "Det betyder personer som bråkar eller slåss ute.",
-    //         en: "This refers to people arguing or physically fighting outside in places where other people may be present.",
-    //         en_easy: "This means people arguing or fighting outside."
-    //     },
-    //     required: true,
-    //     options: areaProblemOptions
-    // },
-    // {
-    //     id: "problem-forceful-begging",
-    //     section: {
-    //         sv: "Problem i området där du bor",
-    //         sv_easy: "Problem där du bor",
-    //         en: "Problems in the area where you live", en_easy: "Problems where you live"
-    //     },
-    //     section_subTitle: {
-    //         sv: "Upplever du att problemen nedan förekommer där du bor eller i närheten?",
-    //         sv_easy: "Finns något av problemen nedan där du bor eller nära dig?",
-    //         en: "Do you feel that the problems below occur where you live or nearby?", en_easy: "Do you see any of these problems where you live or nearby?"
-    //     },
-    //     question: { sv: "Påträngande tiggeri", sv_easy: "Tiggeri som känns påträngande", en: "Forceful begging", en_easy: "Begging that feels pushy" },
-    //     helpText: {
-    //         sv: "Med påträngande tiggeri menas tiggeri som upplevs ihärdigt eller svårt att komma undan.",
-    //         sv_easy: "Det betyder när någon ber om pengar på ett sätt som känns jobbigt eller svårt att komma undan.",
-    //         en: "Forceful begging means begging that feels persistent, intrusive or difficult to walk away from.",
-    //         en_easy: "This means someone asking for money in a way that feels pushy or hard to get away from."
-    //     },
-    //     required: true,
-    //     options: areaProblemOptions
-    // },
     // Vulnerability to crime
     {
         id: "physical-violence",

@@ -170,7 +170,7 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-.survery_endMsg {
+.surveyCompletionMessage {
   width: fit-content;
   font-size: 14px;
 }
@@ -188,7 +188,7 @@ input[type="radio"] {
     min-width: 650px;
   }
 
-  .survery_endMsg {
+  .surveyCompletionMessage {
     width: 65ch;
     font-size: 15px;
   }
@@ -314,9 +314,9 @@ input[type="radio"] {
   }
 
   .pagination_container {
-    min-height: 120px;
+    min-height: 110px;
     margin: 0;
-    padding: 0 40px 30px;
+    padding: 0 40px 10px;
     background: white;
     border-top: 1px solid #bebebe;
     border-radius: 0 0 5px 5px;

@@ -1,16 +1,16 @@
 import './App.css'
 import { useState, useMemo } from 'react'
-import type { AnswerChangeHandler, LanguageType, SurveyAnswers, SurveyQuestion } from "./types/survey";
-import { surveyQuestions_0, paginationHint } from './Q3'
-import SingleQuestionCard from './components/SingleQuestionCard'
-import LanguageDropdown from './components/LangDropDown'
-import DemoToggle from './components/DemoToggle'
-import { FinalMessage } from './components/FinalMessage'
-import { MultipleQuestionCard } from './components/MultipleQuestionCard'
+import type { AnswerChangeHandler, LanguageType, SurveyAnswers, SurveyQuestion } from "./model/survey.types";
+import { surveyQuestions, paginationHint } from './data/survey.data';
+import SingleQuestionCard from './survey/components/SingleQuestionCard';
+import LanguageDropdown from './survey/components/LangDropDown';
+import DemoToggle from './survey/components/DemoToggle';
+import { FinalMessage } from './survey/components/FinalMessage';
+import { MultipleQuestionCard } from './survey/components/MultipleQuestionCard';
 
 function App() {
-  const [currentSectionIndex, setcurrentSectionIndex] = useState(0)
-  const [skippedQuestion, setSkippedQuestion] = useState(false)
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
+  const [validationAttempted, setValidationAttempted] = useState(false)
   const [answers, setAnswers] = useState<SurveyAnswers>({})
   const [isSurveyComplete, setEndOfSurvey] = useState(false)
   const [language, setLanguage] = useState<LanguageType>("sv")
@@ -21,8 +21,8 @@ function App() {
     setLanguage(newLang)
   }
 
-  const questionsBySection = useMemo(() => {
-    return surveyQuestions_0.reduce((acc, question) => {
+  const questionsBySection = useMemo<Record<string, SurveyQuestion[]>>(() => {
+    return surveyQuestions.reduce((acc, question) => {
       const sectionTitle = question.section?.[language] ?? "no-section"
       acc[sectionTitle] ??= []
       acc[sectionTitle].push(question)
@@ -33,11 +33,13 @@ function App() {
 
 
   const sectionQuestionGroups = Object.values(questionsBySection)
+
   const isFirstSection = currentSectionIndex === 0
   const isLastSection = currentSectionIndex === sectionQuestionGroups.length - 1
 
   // Check for unanswerd Q, users must answer all Q to continue to the next section
   const currentSection_ = sectionQuestionGroups[currentSectionIndex] ?? []
+
   const hasUnansweredQuestions = currentSection_.some(
     question => answers[question.id] === undefined
   )
@@ -48,22 +50,22 @@ function App() {
     if (type === "Next") {
 
       if (hasUnansweredQuestions) {
-        setSkippedQuestion(true)
+        setValidationAttempted(true)
         return
       }
-      setSkippedQuestion(false)
+      setValidationAttempted(false)
 
       if (isLastSection) {
 
         setEndOfSurvey(true)
         return
       }
-      setcurrentSectionIndex(index => index + 1)
+      setCurrentSectionIndex(index => index + 1)
 
     } else if (type === "Back") {
 
-      setSkippedQuestion(false)
-      setcurrentSectionIndex(index => Math.max(0, index - 1))
+      setValidationAttempted(false)
+      setCurrentSectionIndex(index => Math.max(0, index - 1))
     }
   }
 
@@ -75,7 +77,7 @@ function App() {
   }
 
 
-  const currentQuestionType = sectionQuestionGroups[currentSectionIndex]?.[0]?.section_subTitle
+  const currentQuestionType = sectionQuestionGroups[currentSectionIndex]?.[0]?.description
   const currentSection = sectionQuestionGroups[currentSectionIndex]
 
   const finalMsg = currentSection?.at(-1)?.finalMsg
@@ -125,7 +127,7 @@ function App() {
             <div className='pagination_container'>
               <div className='navigation-hint'>
                 {
-                  skippedQuestion ? <p>{paginationHint[language]}</p> : <></>
+                  validationAttempted ? <p>{paginationHint[language]}</p> : <></>
                 }
               </div>
               {finalMsg && (
@@ -137,8 +139,20 @@ function App() {
                 <button
                   disabled={isFirstSection}
                   onClick={() => handleSectionNavigation("Back")}>{isSwedish ? "Bakåt" : "Back"}</button>
-                <button
-                  onClick={() => handleSectionNavigation("Next")}>{isSwedish ? "Nästa" : "Next"}</button>
+
+                {finalMsg ?
+
+                  <button
+                    onClick={() => handleSectionNavigation("Next")}>
+                    {isSwedish ? "Skicka in" : "Submit"}
+                  </button>
+                  :
+                  <button
+                    onClick={() => handleSectionNavigation("Next")}>
+                    {isSwedish ? "Nästa" : "Next"}
+                  </button>
+
+                }
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useRef } from "react";
-import type { QuestionCardProps } from "../types/survey";
+import type { QuestionCardProps } from "../model/survey.types";
 import Radio from "./Radio"
 import QuestionHelp from "./QuestionHelp";
 
@@ -18,7 +18,7 @@ export const MultipleQuestionCard = ({ questionsBySection, currentSectionIndex, 
         sectionTitleRef.current?.focus()
     }, [currentSectionIndex])
 
-    if (!firstQuestion || !firstQuestion.section_subTitle) {
+    if (!firstQuestion || !firstQuestion.description) {
         return null
     }
 
@@ -30,7 +30,7 @@ export const MultipleQuestionCard = ({ questionsBySection, currentSectionIndex, 
                     ref={sectionTitleRef}
                     tabIndex={-1}
                 >{sectionTitles[currentSectionIndex]}</p>
-                <p>{firstQuestion.section_subTitle[language]}</p>
+                <p>{firstQuestion.description[language]}</p>
             </div>
 
             <div className="option_container multi_option">
@@ -81,7 +81,7 @@ export const MultipleQuestionCard = ({ questionsBySection, currentSectionIndex, 
                                                             key={optionId}
                                                             type='radio'
                                                             id={optionId}
-                                                            name={optionId}
+                                                            name={item.id}
                                                             checked={answers[item.id] === option.value}
                                                             onChange={() => handleAnswers(item.id, option.value)}
                                                             value={option.value}

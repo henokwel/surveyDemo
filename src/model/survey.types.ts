@@ -1,6 +1,6 @@
 export type LanguageType = "sv" | "sv_easy" | "en" | "en_easy";
 
- export type FinalMessageProps = {
+export type FinalMessageProps = {
     sv: string[];
     sv_easy: string[];
     en: string[];
@@ -22,7 +22,7 @@ export type SurveyOption = {
 export type SurveyQuestion = {
     id: string;
     section?: LocalizedText;
-    section_subTitle?: LocalizedText;
+    description?: LocalizedText;
     question: LocalizedText;
     helpText?: LocalizedText;
     required: boolean;

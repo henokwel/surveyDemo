@@ -1,6 +1,6 @@
 import { useState } from "react"
 import "./QuestionHelp.css"
-import type { LanguageType } from "../types/survey"
+import type { LanguageType } from "../model/survey.types"
 
 
 type QuestionHelpType = {

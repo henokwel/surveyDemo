@@ -1,4 +1,4 @@
-import type { QuestionCardProps } from "../types/survey"
+import type { QuestionCardProps } from "../model/survey.types"
 import Radio from "./Radio"
 import QuestionHelp from "./QuestionHelp"
 
@@ -22,48 +22,7 @@ function SingleQuestionCard({ questionsBySection, currentSectionIndex, language,
 
 
     return (
-        // <div className='question_card'>
-        //     <div className='question_container'>
-        //         <p>{question[language]}</p>
-        //         {
-        //             improvedUI && helperText ?
-        //                 <QuestionHelp
-        //                     language={language}
-        //                     helpText={helperText[language]}
-        //                 />
-        //                 : <></>
-        //         }
-        //     </div>
-        //     {
-        //         sectionGroups[currentSectionIndex][0].options.map(option => {
 
-        //             const optionId = `${itemID}-${option.value}`
-
-        //             return (
-        //                 <div className="option_container singleQView" key={optionId}>
-        //                     <div className="inputDiv inputDiv_singleQView">
-        //                         <Radio
-        //                             key={itemID}
-        //                             type='radio'
-        //                             id={optionId}
-        //                             name={itemID}
-        //                             checked={answers[itemID] === option.value}
-        //                             onChange={() => handleAnswers(itemID, option.value)}
-        //                             value={option.value}
-        //                             aria-label={option.value}
-        //                         />
-        //                         <label className='mobile_label'
-        //                             htmlFor={optionId}>
-        //                             {option.label[language]}
-        //                         </label>
-        //                     </div>
-        //                 </div>
-        //             )
-        //         }
-        //         )
-        //     }
-
-        // </div>
         <fieldset className="question_card">
             <legend className="question_container">
                 {question[language]}

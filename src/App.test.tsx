@@ -34,7 +34,7 @@ vi.mock("./Q3", () => {
       "Svara på frågan innan du fortsätter.",
       "Answer the question before continuing.",
     ),
-    surveyQuestions_0: [
+    surveyQuestions: [
       {
         id: "question-one",
         section: localizedText("Första delen", "First section"),
