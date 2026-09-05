@@ -1,7 +1,6 @@
 import { useState } from "react"
 import "./QuestionHelp.css"
-import type { LanguageType } from "../model/survey.types"
-
+import type { LanguageType } from "../../model/survey.types"
 
 type QuestionHelpType = {
   helpText: string
@@ -10,7 +9,7 @@ type QuestionHelpType = {
 
 function QuestionHelp({ helpText, language }: QuestionHelpType) {
   const [isOpen, setIsOpen] = useState(false)
- 
+
 
   if (!helpText) return null
 

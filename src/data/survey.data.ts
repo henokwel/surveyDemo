@@ -1,4 +1,5 @@
-import type { SurveyOption, LanguageType, SurveyQuestion } from "./model/survey.types";
+import type { SurveyOption, LanguageType, SurveyQuestion } from "../model/survey.types";
+
 
 
 export const languageOptions: { value: LanguageType; label: string }[] = [
