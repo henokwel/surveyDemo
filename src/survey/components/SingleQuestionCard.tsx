@@ -1,4 +1,4 @@
-import type { QuestionCardProps } from "../model/survey.types"
+import type { QuestionCardProps } from "../../model/survey.types";
 import Radio from "./Radio"
 import QuestionHelp from "./QuestionHelp"
 
